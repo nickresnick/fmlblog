@@ -21,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(params[:id])
   end
 
   def create
