@@ -5,7 +5,9 @@ class UsersControllerTest < ActionController::TestCase
   def setup
     @user = users(:michael)
     @other_user = users(:archer)
+    @base_title = "Nick's First Application"
   end
+
   test "should get new" do
     get :new
     assert_response :success
@@ -55,5 +57,11 @@ class UsersControllerTest < ActionController::TestCase
       delete :destroy, id: @user
     end
     assert_redirected_to root_url
+  end
+
+  test "should get help" do
+    get :help
+    assert_response :success
+    assert_select "title", "Help | #{@base_title}"
   end
 end
