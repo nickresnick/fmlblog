@@ -55,9 +55,18 @@ class User < ActiveRecord::Base
 
   # Sets the password reset attributes.
   def create_reset_digest
-    reset_token = User.new_token
+    self.reset_token = User.new_token
     update_attribute(:reset_digest,  User.digest(reset_token))
     update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  def index
+    @users = User.where(activated: true).paginate(page: params[:page])
+  end
+
+  def show
+    @user = User.find(params[:id])
+    redirect_to root_url and return unless activated?
   end
 
   # Sends password reset email.
