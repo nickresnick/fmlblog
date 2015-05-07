@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def index #remember that when this, and edit and new are called upon by a route, it automatically goes to the view with the same name as well
@@ -41,15 +42,6 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'edit'
-    end
-  end
-
-  # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in? #if logged_in? returns false, they proceed with the flash
-      store_location #Store their attempted URL
-      flash[:danger] = "Please log in."
-      redirect_to login_url
     end
   end
 

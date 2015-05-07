@@ -1,0 +1,6 @@
+<% if @feed_items.any? %>
+    <ol class="microposts">
+      <%= render @feed_items %> #it goes to the _micropost partial bc it knows @feed_items is class Micropost
+    </ol>
+    <%= will_paginate @feed_items %>
+<% end %>
