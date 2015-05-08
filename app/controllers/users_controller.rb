@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost = @user.microposts.build
   end
 
   def index #remember that when this, and edit and new are called upon by a route, it automatically goes to the view with the same name as well
@@ -89,6 +90,10 @@ class UsersController < ApplicationController
     def user_params
     params.require(:user).permit(:name, :email, :password, #Note here that remember_digest and admin are left out so ppl can't edit them
                                  :password_confirmation)
+    end
+
+    def micropost_params
+      params.require(:micropost).permit(:content, :picture)
     end
 
 
