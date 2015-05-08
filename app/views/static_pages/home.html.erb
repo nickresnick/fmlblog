@@ -4,6 +4,9 @@
         <section class="user_info">
           <%= render 'shared/user_info' %>
         </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
         <section class="micropost_form">
           <%= render 'shared/micropost_form' %>
         </section>
@@ -16,15 +19,15 @@
 <% else %>
     <div class = "center jumbotron">
 
-  <h1>Welcome to Nick's Sample App</h1>
+        <h1>Welcome to Nick's Sample App</h1>
 
-  <h2>
+        <h2>
     This is the home page for Nick's Sample Application. You may view his LinkedIn profile
     <a href="https://www.linkedin.com/profile/view?id=216783420&trk=nav_responsive_tab_profile">here.</a>
-  </h2>
+        </h2>
 
-  <%= link_to "Sign Up Bro!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+    <%= link_to "Sign Up Bro!", signup_path, class: "btn btn-lg btn-primary" %>
+        </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails logo", id: "pic"), 'http://rubyonrails.org/' %>
 

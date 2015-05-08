@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   get 'password_resets/new'
-
   get 'password_resets/edit'
-
   get 'sessions/new'
-
   root                'static_pages#home'
   get    'help'    => 'users#help'
   get    'about'   => 'static_pages#about'
@@ -13,8 +10,13 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' #login page
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers #member makes sure that the url is users/id/folloing so the id is included
+    end
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]
 end

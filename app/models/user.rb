@@ -1,6 +1,16 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy #Note that this says user destroyed implies microposts destroyed, not the other way around
 
+  has_many :active_relationships,   class_name:  "Relationship",
+                                    foreign_key: "follower_id",
+                                    dependent:   :destroy #Remember that active relationship refers to you following someone
+  has_many :passive_relationships,  class_name:  "Relationship",
+                                    foreign_key: "followed_id",
+                                    dependent:   :destroy
+
+  has_many :following, through: :active_relationships, source: :followed #source just says that we are using following in place of followed
+  has_many :followers, through: :passive_relationships, source: :follower
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   before_save   :downcase_email
@@ -83,8 +93,28 @@ class User < ActiveRecord::Base
 
   # Defines a proto-feed.
   # See "Following users" for the full implementation.
+  # Returns a user's status feed.
   def feed
-    Micropost.where("user_id = ?", id) #doing the question mark thing makes sure that id isn't stored in the database for secuirty
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id" #Since following/follower is an index, we say look in relationships,
+                                                    #find all followed_id's where the follower_id is equal to our user id.
+    Micropost.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id) #since followed_id = user_id, we look for the user_id in following_ids
+  end
+
+  # Follows a user.
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  # Unfollows a user.
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  # Returns true if the current user is following the other user.
+  def following?(other_user)
+    following.include?(other_user) #so user.following.include? is the resulting method that would return all the ppl they follow
   end
 
   private #PPPPPPPPPPPPPRRRRRRRRRRRRRRIIIIIIIIIIIIIVVVVVVVVVVVVVVAAAAAAAAAAAATTTTTTTTTTTTTTEEEEEEEEEEEEE
