@@ -74,4 +74,9 @@ class UsersControllerTest < ActionController::TestCase
     get :followers, id: @user
     assert_redirected_to login_url
   end
+
+  test "should make admin" do
+    log_in_as(@user)
+    get show, id:@other_user
+  end
 end

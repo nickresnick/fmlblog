@@ -5,6 +5,10 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+      <% if @user.admin? == false %>
+            <%= link_to "Make Admin", @user, method: :make_admin,
+                          data: { confirm: "You sure?" } %>
+          <% end %>
       </h1>
     </section>
     <section class="stats">

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :index, :destory,
+  before_action :logged_in_user, only: [:edit, :update, :index, :destroy,
                                         :following, :followers] #specificying edit and update means that the before requirement only pertains to those methods
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-    @micropost = @user.microposts.build
   end
 
   def index #remember that when this, and edit and new are called upon by a route, it automatically goes to the view with the same name as well
@@ -83,6 +82,14 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def make_admin
+    @user = User.find(params[:id])
+    if @user.admin? == false
+      @user.admin = true
+    end
+    redirect_to @user
   end
 
   private #AAAAAAAAAAAAANNNNNNYYYTTTTHHHHHHHHIIIINNNNGGGGG Below here is PRIVATE
