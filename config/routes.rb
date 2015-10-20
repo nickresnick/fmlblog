@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root                'static_pages#home'
   get    'help'    => 'users#help'
   get    'about'   => 'static_pages#about'
-  get    'contact' => 'static_pages#contact'
+  get    'contact.rb' => 'static_pages#contact.rb'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new' #login page
   post   'login'   => 'sessions#create' #actual log in process
