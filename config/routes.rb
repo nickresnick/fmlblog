@@ -10,13 +10,16 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' #login page
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
+
+  match '/contacts',     to: 'contacts#new',             via: 'get'
   resources :users do
     member do
-      get :following, :followers #member makes sure that the url is users/id/folloing so the id is included
+      get :following, :followers #member makes sure that the url is users/id/following so the id is included
     end
   end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
+  resources :contacts,           only: [:new, :create]
 end
