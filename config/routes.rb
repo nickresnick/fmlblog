@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
 
-  match '/contacts',     to: 'contacts#new',             via: 'get'
+  get    'contacts' => 'contacts#new'
   resources :users do
     member do
       get :following, :followers #member makes sure that the url is users/id/following so the id is included
