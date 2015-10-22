@@ -92,8 +92,13 @@ h3{
 
 #text {
   font-size: 1.3em;
+  color: #fff;
   padding-bottom: 5px;
   font-family: "Lato";
+  &:hover {
+    color: dodgerblue;
+    text-decoration: none;
+  }
 }
 
 
@@ -341,6 +346,6 @@ span.picture {
 
 /* navbar */
 .navbar-inverse {
-  background-color: #726170;
-  border-color: #726170;
+  background-color: #4F394C;
+  border-color: #4F394C;
 }
