@@ -76,12 +76,13 @@ h3{
  /* header */
 
 #logo {
+  float: left;
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -1px;
   text-transform: uppercase;
   font-weight: bold;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   &:hover {
     color: dodgerblue;
     text-decoration: none;
