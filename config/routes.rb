@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :posts
 
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -24,4 +23,6 @@ Rails.application.routes.draw do
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
   resources :contacts,           only: [:new, :create]
+  resources :posts
+
 end
