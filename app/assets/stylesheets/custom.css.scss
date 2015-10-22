@@ -77,13 +77,12 @@ h3{
 
 #logo {
   float: left;
+  vertical-align: middle;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
-  padding-top: 7px;
-
   &:hover {
     color: dodgerblue;
     text-decoration: none;
@@ -91,7 +90,7 @@ h3{
 }
 
 #text {
-  padding-top: 7px;
+  vertical-align: middle;
 }
 
 
