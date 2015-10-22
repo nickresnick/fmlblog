@@ -28,8 +28,7 @@ gem 'sdoc', '0.4.0', group: :doc
 
 gem 'mail_form', '1.5'
 gem 'simple_form'
-gem 'rdiscount'
-gem 'toto'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
