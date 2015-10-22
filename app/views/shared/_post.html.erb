@@ -4,6 +4,7 @@
     <th>Name</th>
     <th>Title</th>
     <th>Content</th>
+    <th>Date</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -14,6 +15,7 @@
         <td><%= post.name %></td>
         <td><%= post.title %></td>
         <td><%=h truncate(post.content, :length => 80) %></td>
+        <td><%= post.created_at %></td>
         <td><%= link_to 'Show', post %></td>
       </tr>
   <% end %>
