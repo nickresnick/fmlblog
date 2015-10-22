@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
 
     else
-    @posts = Post.all
+    @posts = Post.includes(:comments).order("created_at desc").limit(5)
     end
 end
 
