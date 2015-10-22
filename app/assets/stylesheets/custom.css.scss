@@ -83,6 +83,7 @@ h3{
   letter-spacing: -1px;
   font-weight: bold;
   padding-bottom: 5px;
+  vertical-align: middle;
   &:hover {
     color: dodgerblue;
     text-decoration: none;
@@ -90,9 +91,9 @@ h3{
 }
 
 #text {
-  font-size: 1em;
+  font-size: 1.3em;
   padding-bottom: 5px;
-  font-family: "Delicious";
+  font-family: "Lato";
 }
 
 
