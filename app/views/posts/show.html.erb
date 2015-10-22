@@ -26,6 +26,8 @@
       <b>Comment:</b>
       <%= comment.body %>
     </p>
+    <br>
+    <td><%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 
 <h2>Add a comment:</h2>
