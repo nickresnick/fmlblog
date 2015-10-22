@@ -15,7 +15,7 @@
         <td><%= post.name %></td>
         <td><%= post.title %></td>
         <td><%=h truncate(post.content, :length => 80) %></td>
-        <td><%= post.created_at.day %></td>
+        <td><%= post.created_at.to_date %></td>
         <td><%= link_to 'Show', post %></td>
       </tr>
   <% end %>
