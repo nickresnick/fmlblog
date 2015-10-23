@@ -1,15 +1,16 @@
 <%= form_for @post do |f| %>
+    <%= f.error_notification %>
+    <div>
+      <%= f.label :name %>
+    </div>
     <div>
       <%= f.label :title %>
     </div>
     <div>
-      <%= f.text_field :title %>
+      <%= f.text_field :content  %>
     </div>
     <div>
-      <%= f.label :body %>
-    </div>
-    <div>
-      <%= f.cktext_area :body, rows: 10 %>
+      <%= f.cktext_area :content, rows: 10 %>
     </div>
     <div>
       <%= f.submit %>
