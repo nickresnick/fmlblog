@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:create, :destroy, :edit]
   before_action :correct_user, only: [:destroy, :edit]
-  before_action :admin_user, only: [:create, :destroy]
   after_filter "save_my_previous_url", only: [:new]
 
   # GET /posts
