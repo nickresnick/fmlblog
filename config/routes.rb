@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' #login page
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
-  mount Ckeditor::Engine => '/ckeditor'
 
   get    'contacts' => 'contacts#new'
   resources :users do
@@ -27,5 +26,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  mount Ckeditor::Engine => '/ckeditor'
 
 end
