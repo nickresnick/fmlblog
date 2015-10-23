@@ -18,7 +18,10 @@ class UsersController < ApplicationController
       redirect_to @current_user
       flash[:info] = "You're already signed up bro!"
     else
-      @user = User.new
+      if @user.admin?
+        @user = User.new
+      else
+        redirect_to root
     end
   end
 
@@ -64,7 +67,7 @@ class UsersController < ApplicationController
     elsif !current_user
       redirect_to login_path
     end
-  end
+    end
 
   def not_logged_in
     logged_in?
