@@ -14,7 +14,7 @@
       <tr>
         <td><p><%= post.name %></p></td>
         <td><p><%= post.title %></p></td>
-        <td><p><textarea><%=h truncate(post.content, :length => 80) %></textarea></p></td>
+        <td><p><%=h truncate(post.content.html_safe, :length => 80) %></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
         <td><p><%= link_to 'Show', post %></p></td>
       </tr>
