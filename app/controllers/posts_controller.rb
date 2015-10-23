@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @back_url = session[:my_previous_url]
   end
 
   # GET /posts/new
