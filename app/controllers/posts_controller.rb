@@ -24,7 +24,10 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    if current_user.admin?
+      @post = Post.new
+    else
+      format.html { redirect_to root, notice: 'You are not authorized to make posts' }
   end
 
   # GET /posts/1/edit
