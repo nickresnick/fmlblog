@@ -58,13 +58,6 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def admin_user #Defines admin user for before action
-    if current_user && !current_user.admin?
-      redirect_to root_url
-    elsif !current_user
-      redirect_to login_path
-    end
-  end
 
   def not_logged_in
     logged_in?
@@ -101,6 +94,14 @@ class UsersController < ApplicationController
 
     def micropost_params
       params.require(:micropost).permit(:content, :picture)
+    end
+
+    def admin_user #Defines admin user for before action
+      if current_user && !current_user.admin?
+        redirect_to root_url
+      elsif !current_user
+        redirect_to login_path
+      end
     end
 
 end
