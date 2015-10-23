@@ -1,9 +1,9 @@
 <table>
   <thead>
   <tr>
-    <th><p>Name</p></th>
+    <th><p>Author</p></th>
     <th><p>Title</p></th>
-    <th><p>Content</p></th>
+    <th><p>Post</p></th>
     <th><p>Date</p></th>
     <th colspan="3"></th>
   </tr>
@@ -14,7 +14,7 @@
       <tr>
         <td><p><%= post.name %></p></td>
         <td><p><%= post.title %></p></td>
-        <td><p><%=h truncate(post.content, :length => 80) %></p></td>
+        <td><p><%=h truncate(raw(post.content), :length => 80) %></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
         <td><p><%= link_to 'Show', post %></p></td>
       </tr>
