@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     if logged_in?
       @post = Post.new
     else
-      redirect_to root
+      redirect_to root_path
       flash[:info] = "You're not authorized to make a post"
     end
   end
