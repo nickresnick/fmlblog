@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :following, through: :active_relationships, source: :followed #source just says that we are using following in place of followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :posts,  dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
 

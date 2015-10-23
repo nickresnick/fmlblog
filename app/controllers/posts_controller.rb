@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :correct_user, only: :destroy
 
   # GET /posts
   # GET /posts.json
+
   def index
     @posts = Post.all.order("created_at desc")
   end
@@ -59,6 +62,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url if @post.nil?
   end
 
   private
