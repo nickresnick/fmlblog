@@ -12,6 +12,11 @@
     <div class="row">
       <%= render 'shared/post' %>
     </div>
+<div>
+  <% if logged_in? %>
+  <%= link_to 'New Post', new_post_path %>
+      </div>
+
 
 
 
