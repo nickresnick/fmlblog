@@ -28,6 +28,7 @@ class PostsController < ApplicationController
       @post = Post.new
     else
       format.html { redirect_to root, notice: 'You are not authorized to make posts' }
+    end
   end
 
   # GET /posts/1/edit
