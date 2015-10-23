@@ -1,6 +1,17 @@
-<%= form_for @post do |form| %>
-
-    <%= form.cktext_area :notes, :class => 'someclass', :ckeditor => {:language => 'uk'} %>
-    <%= form.cktext_area :content, :value => 'Default value', :id => 'sometext' %>
-    <%= cktext_area :page, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+<%= form_for @article do |f| %>
+    <div>
+      <%= f.label :title %>
+    </div>
+    <div>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body %>
+    </div>
+    <div>
+      <%= f.cktext_area :body, rows: 10 %>
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
 <% end %>
