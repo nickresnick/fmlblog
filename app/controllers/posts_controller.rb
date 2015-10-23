@@ -24,10 +24,11 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    if current_user.admin?
+    if logged_in?
       @post = Post.new
     else
-      format.html { redirect_to root, notice: 'You are not authorized to make posts' }
+      redirect_to root
+      flash[:info] = "You're not authorized to make a post"
     end
   end
 
