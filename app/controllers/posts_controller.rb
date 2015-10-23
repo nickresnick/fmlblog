@@ -15,14 +15,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    def save_my_previous_url
-      # session[:previous_url] is a Rails built-in variable to save last url.
-      session[:my_previous_url] = URI(request.referer || '').path
-      @back_url = session[:my_previous_url]
-    end
   end
 
-
+  def save_my_previous_url
+    # session[:previous_url] is a Rails built-in variable to save last url.
+    session[:my_previous_url] = URI(request.referer || '').path
+    @back_url = session[:my_previous_url]
+  end
 
   # GET /posts/new
   def new
