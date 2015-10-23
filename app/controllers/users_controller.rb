@@ -22,7 +22,8 @@ class UsersController < ApplicationController
         @user = User.new
       else
         redirect_to root
-    end
+      end
+      end
   end
 
   def edit
@@ -105,6 +106,5 @@ class UsersController < ApplicationController
     def micropost_params
       params.require(:micropost).permit(:content, :picture)
     end
-
 
 end
