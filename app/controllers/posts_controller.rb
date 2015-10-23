@@ -34,8 +34,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @user = User.find(params[:id])
-    if @user.admin?
+    if current_user.admin?
       @post = Post.new(post_params)
     else
       format.html { redirect_to root, notice: 'You are not authorized to make posts' }
