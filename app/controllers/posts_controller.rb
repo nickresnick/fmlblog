@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user, only: :destroy
+  before_action :logged_in_user, only: [:create, :destroy, :edit]
+  before_action :correct_user, only: [:destroy, :edit]
 
   # GET /posts
   # GET /posts.json
