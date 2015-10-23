@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to @current_user
       flash[:info] = "You're already signed up bro!"
     else
-      if @user.admin?
+      if current_user.admin?
         @user = User.new
       else
         redirect_to root
