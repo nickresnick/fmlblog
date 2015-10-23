@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :index, :destroy,
                                         :following, :followers] #specificying edit and update means that the before requirement only pertains to those methods
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: [:create, :destroy]
+  before_action :admin_user,     only: [:new, :create, :destroy]
 
   def show
     @user = User.find(params[:id])
