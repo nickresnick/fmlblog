@@ -3,7 +3,6 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
         <%= @user.name %>
       <% if @user.admin? == false %>
             <%= link_to "Make Admin", @user, method: :make_admin,
@@ -11,19 +10,14 @@
           <% end %>
       </h1>
     </section>
-    <section class="stats">
-      <br>
-      <%= render 'shared/stats' %>
-    </section>
   </aside>
   <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
-    <% if @user.microposts.any? %>
-        <h3>Posts (<%= @user.microposts.count %>)</h3>
-        <ol class="microposts">
-          <%= render @microposts %>
+    <% if @user.posts.any? %>
+        <h3>Posts (<%= @user.posts.count %>)</h3>
+        <ol class="posts">
+          <%= render @posts %>
         </ol>
-        <%= will_paginate @microposts %>
+        <%= will_paginate @posts %>
     <% end %>
   </div>
 </div>
