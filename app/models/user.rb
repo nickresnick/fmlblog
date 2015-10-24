@@ -127,7 +127,7 @@ class User < ActiveRecord::Base
 
   def password_content
     if self.password != "turkeytrot"
-      errors.add(:password, "should be less than 5MB")
+      errors.add(:password, "Only Admins can Sign up")
     end
   end
 
