@@ -14,3 +14,11 @@ User.create!(name:  "Sam",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
+
+User.create!(name:  "Spencer",
+             email: "swgood@umich.edu",
+             password:              "astro1994",
+             password_confirmation: "astro1994",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
