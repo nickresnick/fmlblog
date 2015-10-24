@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'sessions/new'
   root                'static_pages#home'
   get    'help'    => 'users#help'
-  get    'signin'  => 'users#create'
   get    'about'   => 'static_pages#about'
   get    'contact.rb' => 'static_pages#contact.rb'
   get    'signup'  => 'users#new'
