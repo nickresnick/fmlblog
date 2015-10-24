@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :name, presence: true
   validates :content, length: {minimum: 5}
-  validates :picture_size
+  validate :picture_size
 
   private
 
