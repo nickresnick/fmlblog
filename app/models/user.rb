@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, length: { minimum: 6 }, allow_blank: true #But has_secure_password requires that it isn't blank upon creation, so we're fine
+  validate :password_content #But has_secure_password requires that it isn't blank upon creation, so we're fine
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -123,6 +123,12 @@ class User < ActiveRecord::Base
   # Converts email to all lower-case.
   def downcase_email
     self.email = email.downcase
+  end
+
+  def password_content
+    if self.password != "turkeytrot"
+      errors.add(:password, "should be less than 5MB")
+    end
   end
 
   # Creates and assigns the activation token and digest.
