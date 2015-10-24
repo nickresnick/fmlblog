@@ -12,7 +12,7 @@
   <tbody>
   <% @posts.each do |post| %>
       <tr>
-        <td><p><%= link_to post.user, about_path %></p></td>
+        <td><p><%= link_to post.user.name, about_path %></p></td>
         <td><p><%= link_to post.title, post %></p></td>
         <td><p><%= raw truncate(post.content, :length => 80, :escape => false) %></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
