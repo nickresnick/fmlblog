@@ -12,13 +12,11 @@
   <tbody>
   <% @posts.each do |post| %>
       <tr>
-        <td><p><%= post.name %></p></td>
-        <td><p><%= post.title %></p></td>
+        <td><p><%= link_to post.user, about_path %></p></td>
+        <td><p><%= link_to post.title, post %></p></td>
         <td><p><%= raw truncate(post.content, :length => 80, :escape => false) %></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
-        <td><p> <aside class="col-md-4"></p></td>
         <td><p><%= image_tag post.picture.url, :height => "50%", :width => "50%" %></p></td>
-        <td><p><%= link_to 'Show', post %></p></td>
       </tr>
   <% end %>
   </tbody>
