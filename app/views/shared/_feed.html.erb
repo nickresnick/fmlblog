@@ -16,6 +16,8 @@
         <td><p><%= post.title %></p></td>
         <td><p><%= raw truncate(post.content, :length => 80, :escape => false) %></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
+        <td><p> <aside class="col-md-4"></p></td>
+        <td><p><%= image_tag post.picture.url, size: .7 %></p></td>
         <td><p><%= link_to 'Show', post %></p></td>
       </tr>
   <% end %>
