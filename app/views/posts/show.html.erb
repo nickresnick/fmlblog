@@ -1,7 +1,8 @@
 <h4><%= link_to 'Back', url_for(:back) %></h4>
 
 <p id="notice"><%= notice %></p>
-
+<div class="row">
+  <aside class="col-md-8">
 <p>
   <strong>Name:</strong>
   <%= @post.name %>
@@ -17,13 +18,17 @@
   <%= raw @post.content %>
 </p>
 
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag @post.picture.url %>
-</p>
-
 <h2>Comments</h2>
 <%= render @post.comments %>
 
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
+  </aside>
+ <aside class="col-md-4">
+  <p>
+    <strong>Picture:</strong>
+    <%= image_tag @post.picture.url %>
+  </p>
+ </aside>
+
+</div>
