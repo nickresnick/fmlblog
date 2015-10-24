@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
 
+  validates :user_id, presence: true
   validates :title, presence: true
   validates :name, presence: true
   validates :content, length: {minimum: 5}
