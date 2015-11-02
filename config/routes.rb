@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   get    'contacts' => 'contacts#new'
+  get    'nick' => 'users/1'
   resources :users do
     member do
       get :following, :followers #member makes sure that the url is users/id/following so the id is included
