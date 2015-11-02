@@ -6,6 +6,8 @@ class Topic < ActiveRecord::Base
   scope :music, -> {where(name: 'music')}
   scope :life, -> {where(name: 'life')}
 
+  accepts_nested_attributes_for :posts
+
   validate :name_options
 
 
