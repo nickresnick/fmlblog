@@ -15,7 +15,7 @@ class Topic < ActiveRecord::Base
   private
 
   def name_options
-    if self.name == ["film","music","life"]
+    if ["film","music","life"].include?(self.name)
     else
       errors.add(:name, "film, music, or life only")
     end
