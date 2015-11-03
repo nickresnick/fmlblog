@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     if logged_in?
-      @topic = Post.find(params[:topic_id])
+      @topic = Topic.find(params[:topic_id])
       @post = Post.new
     else
       redirect_to root_path
