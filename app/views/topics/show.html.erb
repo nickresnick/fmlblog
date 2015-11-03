@@ -4,11 +4,13 @@
   <strong>Name:</strong>
   <%= @topic.name %>
 </p>
+
+<%= if @topic.posts.any? %>
 <p>
   <strong>Post:</strong>
-  <%= @topic.posts %>
+  <%= render @topic.posts %>
 </p>
-
+<% end %>
 <p>
 
   <%= link_to 'Back', topics_path %>
