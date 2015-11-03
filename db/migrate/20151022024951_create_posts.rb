@@ -5,9 +5,12 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.references :user, index: true
+      t.references :topic, index: true
 
       t.timestamps null: false
     end
-    add_index :posts, [:user_id, :created_at]
+    add_foreign_key :posts, :topics
+    add_foreign_key :posts, :users
+
   end
 end
