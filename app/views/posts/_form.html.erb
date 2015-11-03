@@ -2,9 +2,8 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.fields_for :topics do |ff| %>
-            <%= ff.input :name %>
-      <% end %>
+      <%= f.association :user %>
+      <%= f.association :topic %>
       <%= f.input :title %>
       <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
       <span class="picture">
