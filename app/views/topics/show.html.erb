@@ -5,7 +5,7 @@
   <%= @topic.name %>
 </p>
 
-<%= if @topic.posts.any? %>
+<% if @topic.posts.any? %>
 <p>
   <strong>Post:</strong>
   <%= render @topic.posts %>
