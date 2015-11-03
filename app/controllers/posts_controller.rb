@@ -40,7 +40,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     if current_user.admin?
-      @topic = Topic.find(params[:topic_id])
       @post = @topic.posts.build(post_params)
     else
       format.html { redirect_to root, notice: 'You are not authorized to make posts' }
