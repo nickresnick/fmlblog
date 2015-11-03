@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
 
+  accepts_nested_attributes_for :topic
+
   mount_uploader :picture, PictureUploader
 
   validates :user_id, presence: true
