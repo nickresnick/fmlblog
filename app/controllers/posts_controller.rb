@@ -26,7 +26,6 @@ class PostsController < ApplicationController
   def new
     if logged_in?
       @post = Post.new
-      @topic = Topic.new
     else
       redirect_to root_path
       flash[:info] = "You're not authorized to make a post"
@@ -41,7 +40,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     if current_user.admin?
-      @topic = Topic.find(params[:topic_id])
       @post = current_user.posts.build(post_params)
     else
       format.html { redirect_to root, notice: 'You are not authorized to make posts' }
