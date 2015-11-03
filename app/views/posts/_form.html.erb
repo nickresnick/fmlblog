@@ -2,7 +2,7 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.fields_for :topic do |ff| %>
+      <%= f.fields_for :topics do |ff| %>
             <%= ff.input :name %>
       <% end %>
       <%= f.input :title %>
