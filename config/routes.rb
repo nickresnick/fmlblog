@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :topics
+  resources :topics do
+    resources :posts
+  end
 
   get 'password_resets/new'
   get 'password_resets/edit'
