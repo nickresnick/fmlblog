@@ -8,7 +8,7 @@
 <% if @topic.posts.any? %>
 <p>
   <strong>Post:</strong>
-  <%= render @topic.posts %>
+  <%= render raw @topic.posts %>
 </p>
 <% end %>
 <p>
