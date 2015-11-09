@@ -8,8 +8,7 @@
 <% if @topic.posts.any? %>
 <p>
   <strong>Post:</strong>
-  <%= render @topic.posts %>
-  <%= will_paginate @topic%>
+  <%= render 'shared/feed' %>
 </p>
 <% end %>
 <p>
