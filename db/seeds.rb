@@ -22,3 +22,7 @@ User.create!(name:  "Spencer",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
+
+Topic.create!(name:  "film")
+Topic.create!(name:  "music")
+Topic.create!(name:  "life")
