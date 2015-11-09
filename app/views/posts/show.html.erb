@@ -5,10 +5,11 @@
   <h1>
     <%= @post.title %>
   </h1>
+  <section>
 <p>
-  <strong>Post:</strong>
   <%= raw @post.content %>
 </p>
+  </section>
 
 <h2>Comments</h2>
 <%= render @post.comments %>
