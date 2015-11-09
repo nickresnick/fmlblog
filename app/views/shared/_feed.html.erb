@@ -16,7 +16,7 @@
       <tr>
         <td><p><%= link_to post.user.name, post.user %></p></td>
         <td><h3><%= link_to post.title, post %></h3></td>
-        <td><p><%= raw truncate(post.content, :length => 100, :escape => false)%></p></td>
+        <td><p><%= raw truncate(post.content, :length => 80, :escape => false)%></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
         <td><p><%= post.topic.name %></p></td>
         <td><p><%= image_tag post.picture.url, :height => "50%", :width => "50%" %></p></td>
