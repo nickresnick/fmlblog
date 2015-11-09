@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     if current_user.admin?
-      @post = Post.new(post_params)
+      @post = current_user.posts.build(post_params)
     else
       format.html { redirect_to root, notice: 'You are not authorized to make posts' }
     end
@@ -93,6 +93,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :title, :content, :picture, :user_id, :topic_id)
+      params.require(:post).permit(:name, :title, :content, :picture, :user_id,
+      topic_attributes: [:id, :name])
     end
 end
