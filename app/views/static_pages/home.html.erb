@@ -12,15 +12,17 @@
 
 <div class="row">
         <h3>Most Recent Posts</h3>
-      </div>
-    <div class="row">
+</div>
+<div class="row">
+    <aside class="col-md-12">
       <%= render 'shared/feed' %>
-    </div>
+    </aside>
+</div>
 <div>
   <% if logged_in? %>
     <%= link_to 'New Post', new_post_path %>
   <% end %>
-      </div>
+</div>
 
 
 
