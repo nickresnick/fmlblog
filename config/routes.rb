@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :topics
-
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
