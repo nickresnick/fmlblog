@@ -15,7 +15,7 @@
   <% @posts.each do |post| %>
       <tr>
         <td><p><%= link_to post.user.name, post.user %></p></td>
-        <td><h2><%= link_to post.title, post %></h2></td>
+        <td><h3><%= link_to post.title, post %></h3></td>
         <td><p><%= raw truncate(post.content, :length => 100, :escape => false)%></p></td>
         <td><p><%= post.created_at.to_date %></p></td>
         <td><p><%= post.topic.name %></p></td>
