@@ -2,10 +2,10 @@
 
   <tbody>
     <% @topics.each do |topic| %>
-      <tr>
         <td><%= topic.name %></td>
-        <td><%= topic.posts.content %></td>
-      </tr>
+        <% topic.posts.each do |post| %>
+        <td><%= post.content %></td>
+            <% end %>
     <% end %>
   </tbody>
 
