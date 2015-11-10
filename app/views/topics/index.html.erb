@@ -2,17 +2,18 @@
 
   <tbody>
     <% @topics.each do |topic| %>
-        <td><%= link_to topic.name, topic %></td>
+        <><%= link_to topic.name, topic %>
       <br>
       <br>
         <% topic.posts.each do |post| %>
   <br><br>
-          <td><p><%= post.title %></p></td>
-          <td><p><%= raw truncate(post.content, :length => 80, :escape => false)%></p></td>
+          <p><%= post.title %></p>
+          <><p><%= raw truncate(post.content, :length => 80, :escape => false)%></p>
       <% end %>
     <% end %>
   </tbody>
 
 <br>
-
-<%= link_to 'New Topic', new_topic_path %>
+<% if logged_in? %>
+    <%= link_to 'New Topic', new_topic_path %>
+<% end %>
