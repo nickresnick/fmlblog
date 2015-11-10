@@ -2,7 +2,7 @@
 
   <tbody>
     <% @topics.each do |topic| %>
-        <><%= link_to topic.name, topic %>
+        <%= link_to topic.name, topic %>
       <br>
       <br>
         <% topic.posts.each do |post| %>
