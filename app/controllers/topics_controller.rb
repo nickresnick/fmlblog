@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @search = Topic.new(params[:topic])
-    @topics = Topic.by_name(@search.name)
+    @topics = Topic.find(:name => @search.name)
   end
 
   # GET /topics/1
