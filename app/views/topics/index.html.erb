@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%= simple_form_for(@topics) do |f| %>
-    <%= f.collection_select(:topic_id, Topic.all, :id, :name) %>
-    <% end %>
+<%= simple_form_for topics_path, :method => 'post' do %>
+    <%= collection_select :name, @topics, :id, :name, :prompt => "Select Topic" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
   <tbody>
     <% @topics.each do |topic| %>
