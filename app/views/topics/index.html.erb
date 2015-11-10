@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= simple_form_for topics_path, :method => 'get' do %>
-    <%= collection_select :topic, :name, Topic.all, :id, :name, :prompt => "Select Topic" %>
+    <%= collection_select :topic, :id, Topic.all, :id, :name, :prompt => "Select Topic" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
