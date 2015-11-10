@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= form_for(@search, :url => { :action => "index" }, :html => {:method => :get} ) do |f| %>
+<%= form_for(@search, :url => { :action => 'index' }, :html => {:method => :get} ) do |f| %>
     <%= f.select(:name) %>
     <%= f.submit "Filter List" %>
 <% end %>
