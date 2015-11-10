@@ -5,18 +5,7 @@
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-  <tbody>
-    <% @topics.each do |topic| %>
-        <%= link_to topic.name, topic %>
-      <br>
-      <br>
-        <% topic.posts.each do |post| %>
-  <br><br>
-          <p><%= post.title %></p>
-          <p><%= raw truncate(post.content, :length => 80, :escape => false)%></p>
-      <% end %>
-    <% end %>
-  </tbody>
+
 
 <br>
 <% if logged_in? %>
