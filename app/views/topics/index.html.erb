@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<%= simple_form_for(@topics) do |f| %>
+    <%= f.collection_select :topic_id, Topic.order(:name),:id,:name, include_blank: true %>
+    <% end %>
+
   <tbody>
     <% @topics.each do |topic| %>
         <%= link_to topic.name, topic %>
