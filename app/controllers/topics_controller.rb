@@ -1,10 +1,13 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  has_scope :film
+  has_scope :music
+  has_scope :life
 
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = apply_scopes(Topic).all
   end
 
   # GET /topics/1
