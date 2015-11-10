@@ -4,7 +4,7 @@
     <% @topics.each do |topic| %>
       <tr>
         <td><%= topic.name %></td>
-        <td><%= topic.posts %></td>
+        <td><%= topic.posts.content %></td>
       </tr>
     <% end %>
   </tbody>
