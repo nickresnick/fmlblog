@@ -7,7 +7,8 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = apply_scopes(Topic).all
+    @search = Topic.new(params[:topic])
+    @topics = Topic.by_name(@search.name)
   end
 
   # GET /topics/1
