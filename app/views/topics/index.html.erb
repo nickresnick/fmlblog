@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= simple_form_for(@topics) do |f| %>
-    <%= f.collection_select(:topic_id, Topic.all, :id, :name)
+    <%= f.collection_select(:topic_id, Topic.all, :id, :name) %>
     <% end %>
 
   <tbody>
