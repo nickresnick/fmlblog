@@ -4,8 +4,9 @@
     <% @topics.each do |topic| %>
         <td><%= topic.name %></td>
         <% topic.posts.each do |post| %>
-        <td><%= post.content %></td>
-            <% end %>
+          <td><p>post.name</p></td>
+          <td><p><%= raw truncate(post.content, :length => 80, :escape => false)%></p></td>
+      <% end %>
     <% end %>
   </tbody>
 
