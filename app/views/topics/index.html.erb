@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= simple_form_for @topics, :method => 'get' do %>
+<%= simple_form_for topics_path, :method => 'get' do %>
     <%= collection_select :topic, :id, @topics, :id, :name, :prompt => "Select Topic" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>

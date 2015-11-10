@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  resources :topics
+  resources :topics do
+    resources :posts
+  end
 
   mount Ckeditor::Engine => '/ckeditor'
 
