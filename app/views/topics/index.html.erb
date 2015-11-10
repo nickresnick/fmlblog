@@ -2,7 +2,9 @@
 
   <tbody>
     <% @topics.each do |topic| %>
-        <td><%= topic.name %></td>
+        <td><%= link_to topic.name, topic_path %></td>
+      <br>
+      <br>
         <% topic.posts.each do |post| %>
   <br><br>
           <td><p><%= post.title %></p></td>
