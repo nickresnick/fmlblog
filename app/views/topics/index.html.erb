@@ -8,7 +8,7 @@
         <% topic.posts.each do |post| %>
   <br><br>
           <p><%= post.title %></p>
-          <><p><%= raw truncate(post.content, :length => 80, :escape => false)%></p>
+          <p><%= raw truncate(post.content, :length => 80, :escape => false)%></p>
       <% end %>
     <% end %>
   </tbody>
