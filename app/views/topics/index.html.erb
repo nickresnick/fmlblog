@@ -5,7 +5,9 @@
     <%= f.submit "Filter List" %>
 <% end %>
 
-
+<%= @topics.each do |topic| %>
+    <% render topic.posts %>
+<% end %>
 
 <br>
 <% if logged_in? %>
