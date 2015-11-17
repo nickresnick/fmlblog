@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result.includes(:topic)
+    @posts = @q.result.includes(:topic_id)
   end
 
   # GET /posts/1
