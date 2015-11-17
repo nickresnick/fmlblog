@@ -2,7 +2,7 @@
 
 <%= search_form_for(@q) do |f| %>
 
-    <%= f.select :topic_id, options_for_topic, {:include_blank => "Select Topic"}, {:style => "width:175px", class: "form-control"} %>
+    <%= f.select :topic_name, options_for_topic, {:include_blank => "Select Topic"}, {:style => "width:175px", class: "form-control"} %>
     <%= f.submit %>
     <% end %>
 
