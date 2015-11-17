@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @q = Post.ransack(params[:q])
+    @q = Post.search(params[:q])
     @posts = @q.result(distinct: true)
   end
 
