@@ -2,11 +2,8 @@
 
 <%= search_form_for(@q) do |f| %>
 
-    # Search if the name field contains...
     <%= f.select :topic_id, options_for_topic, {:include_blank => "Select Topic"}, {:style => "width:175px", class: "form-control"} %>
-
     <%= f.submit %>
-
     <% end %>
 
 <h1>Posts Archive</h1>
