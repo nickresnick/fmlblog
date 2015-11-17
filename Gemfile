@@ -31,7 +31,7 @@ gem 'simple_form'
 gem 'ckeditor'
 gem 'paperclip'
 gem 'has_scope'
-gem 'ransack'
+gem 'net-ssh'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
