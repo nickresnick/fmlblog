@@ -8,8 +8,8 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true)
+    @q = Topic.ransack(params[:q])
+    @posts = @q.result.includes(:posts)
   end
 
   # GET /posts/1
