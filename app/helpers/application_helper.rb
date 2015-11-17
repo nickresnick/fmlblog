@@ -7,4 +7,8 @@ module ApplicationHelper #This module declaration allows us to have the full_tit
         "#{page_title} | #{base_title}"
       end
     end
+
+  def options_for_topic
+    ['film', 'music','life']
+  end
   end
