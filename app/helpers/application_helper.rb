@@ -9,6 +9,6 @@ module ApplicationHelper #This module declaration allows us to have the full_tit
     end
 
   def options_for_topic
-    [1,2,3]
+    [['film',1],['music',2],['life',3]]
   end
   end
