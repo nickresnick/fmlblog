@@ -11,12 +11,15 @@
 </div>
 
 <div class="row">
-        <h3>Most Recent Posts</h3>
 </div>
 <div class="row">
-    <aside class="col-md-12">
+  <div class="col-md-6">
       <%= render 'shared/feed' %>
-    </aside>
+  </div>
+  <aside>
+    <h3>Most Recent Posts</h3>
+    <%= @posts.name.limit(10) %>
+  </aside>
 </div>
 <div>
   <% if logged_in? %>
