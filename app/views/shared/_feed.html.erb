@@ -6,13 +6,13 @@
         <h3><%= link_to post.title, post %></h3>
           <p>  by <%= link_to post.user.name, post.user %></p>
       </div>
-      <div class="col-md-8">
-        <%= image_tag post.picture.url, :size => "50%" %>
-      </div>
       <div class="large-10 columns">
         <p>
           <%= raw truncate(post.content, :length => 80, :escape => false)%></p>
         <h5><%= post.comments.count %> Comments</h5>
+      </div>
+      <div class="col-md-8">
+        <%= image_tag post.picture.url, :size => "50%" %>
       </div>
     </div>
   </div>
