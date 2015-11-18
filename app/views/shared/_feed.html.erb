@@ -1,21 +1,23 @@
 <% @posts.each do |post| %>
 <div class="row">
+  <div class="large-6 columns">
     <div class="row">
       <div class="large-2 columns small-3">
+        <li><%= link_to post.title, post %></li>
+        <div class="large-3 columns small-3">
+          <strong>
+            <p><%= link_to post.user.name, post.user %></p>
+          </strong>
+        </div>
         <%= image_tag post.picture.url, :size => "50%" %>
       </div>
       <div class="large-10 columns">
         <p>
-          <strong>
-            <p><%= link_to post.user.name, post.user %></p>
-          </strong>
           <%= raw truncate(post.content, :length => 80, :escape => false)%></p>
-        <ul class="inline-list">
-          <li><%= link_to post.title, post %></li>
-        </ul>
         <h5><%= post.comments.count %> Comments</h5>
       </div>
     </div>
+  </div>
 </div>
     <hr/>
 <% end %>
