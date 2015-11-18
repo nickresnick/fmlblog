@@ -21,4 +21,11 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def self.search(search)
+    if search
+      where('topic_id LIKE ?', "%#{search}%").order('created_at DESC')
+    else
+      default_scoped
+    end
+  end
 end

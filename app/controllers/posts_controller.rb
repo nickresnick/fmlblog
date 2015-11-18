@@ -8,8 +8,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result.includes(:topic_id)
+    @posts = Post.search(params[:search])
   end
 
   # GET /posts/1
