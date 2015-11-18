@@ -18,7 +18,9 @@
   </div>
   <aside class="col-md-8">
     <h3>Most Recent Posts</h3>
-    <%= @posts.title %>
+    <%= @posts.each do |post| %>
+        <p><%= link_to post.title, post %></p>
+    <% end %>
   </aside>
 </div>
 <div>
