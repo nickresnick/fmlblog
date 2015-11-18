@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @topic.name %>
-</p>
+</h1>
 
 <% if @topic.posts.any? %>
 <p>
-  <strong>Post:</strong>
   <%= render 'shared/feed' %>
 </p>
 <% end %>
