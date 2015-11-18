@@ -17,13 +17,17 @@
   <div class="col-md-6">
    <div class="jumbotron">
     <h3>Most Recent Posts</h3>
-    <% @posts.each do |post| %>
-          <table>
+     <table>
+       <tbody>
+        <% @posts.each do |post| %>
+           <tr>
             <td><%= link_to post.title, post %></td>
             <td><%= post.created_at.to_date %></td>
-          </table>
+           </tr>
     <% end %>
-      </div>
+    </tbody>
+     </table>
+    </div>
   </div>
   </div>
 <div>
