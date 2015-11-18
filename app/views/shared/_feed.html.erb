@@ -1,8 +1,9 @@
 <% @posts.each do |post| %>
 <div class="row">
-  <div class="large-6 columns">
     <div class="row">
-      <div class="large-2 columns small-3"><%= image_tag post.picture.url, :size => "50%" %></div>
+      <div class="large-2 columns small-3">
+        <%= image_tag post.picture.url, :size => "50%" %>
+      </div>
       <div class="large-10 columns">
         <p>
           <strong>
@@ -13,9 +14,8 @@
           <li><%= link_to post.title, post %></li>
         </ul>
         <h5><%= post.comments.count %> Comments</h5>
-    <hr/>
       </div>
     </div>
-  </div>
 </div>
+    <hr/>
 <% end %>
