@@ -11,9 +11,9 @@
           <%= raw truncate(post.content, :length => 80, :escape => false)%></p>
         <h5><%= post.comments.count %> Comments</h5>
       </div>
-      <div class="col-md-12">
+      <aside>
         <%= image_tag post.picture.url, :size => "50%" %>
-      </div>
+      </aside>
     </div>
   </div>
 </div>
