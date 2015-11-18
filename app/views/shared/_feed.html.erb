@@ -1,11 +1,8 @@
 <% @posts.each do |post| %>
 <div class="row">
-    <div class="row">
-      <div class="large-2 columns small-3">
-        <h3><%= link_to post.title, post %></h3>
+  <div class="col-md-6">
+        <h2><%= link_to post.title, post %></h2>
           <p>  by <%= link_to post.user.name, post.user %></p>
-      </div>
-      <div class="col-md-6">
         <p>
           <%= raw truncate(post.content, :length => 80, :escape => false)%></p>
         <h5><%= post.comments.count %> Comments</h5>
@@ -14,6 +11,5 @@
         <%= image_tag post.picture.url, :height => "50%", :width => "50%" %>
       </div>
     </div>
-</div>
     <hr/>
 <% end %>
