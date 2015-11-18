@@ -1,25 +1,21 @@
-<table>
-  <thead>
-  <tr>
-    <th>Author</th>
-    <th>Title</th>
-    <th>Post</th>
-    <th>Date</th>
-    <th>Topic</th>
-    <th colspan="5"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @posts.each do |post| %>
-      <tr>
-        <td><p><%= link_to post.user.name, post.user %></p></td>
-        <td><h4><%= link_to post.title, post %></h4></td>
-        <td><p><%= raw truncate(post.content, :length => 80, :escape => false)%></p></td>
-        <td><p><%= post.created_at.to_date %></p></td>
-        <td><p><%= link_to post.topic.name, post.topic %></p></td>
-        <td><p><%= image_tag post.picture.url, :height => "50%", :width => "50%" %></p></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<% @posts.each do |post| %>
+<div class="row">
+  <div class="large-6 columns">
+    <div class="row">
+      <div class="large-2 columns small-3"><%= image_tag post.picture.url %></div>
+      <div class="large-10 columns">
+        <p>
+          <strong>
+            <p><%= link_to post.user.name, post.user %></p>
+          </strong>
+          <%= raw truncate(post.content, :length => 80, :escape => false)%></p>
+        <ul class="inline-list">
+          <li><%= link_to post.title, post %></li>
+        </ul>
+        <h5><%= @post.comments.count %> Comments</h5>
+    <hr/>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
