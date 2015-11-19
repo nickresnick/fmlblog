@@ -2,7 +2,7 @@
 
 <%= form_for posts_path, :method => 'get' do %>
     <p>
-      <%= collection_select(:search, :topic_id, Topic.all, :id, :name, prompt: true)   %>
+      <%= collection_select(:search, :topic_id, Topic.all, :id, :name, prompt: "Filter by Topic")   %>
       <%= submit_tag "Search", :name => nil %>
     </p>
 <% end %>
