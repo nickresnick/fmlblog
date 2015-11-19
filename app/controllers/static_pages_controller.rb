@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
   def home
     if logged_in?
       @posts = Post.includes([:comments,:topic]).order("created_at desc").limit(5)
