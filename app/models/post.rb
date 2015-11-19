@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.search(search)
-    if search
+    if search.is_a? Integer
       where(:posts => search).order('created_at DESC')
     else
       where(:posts => [1,2,3]).order('created_at DESC')
