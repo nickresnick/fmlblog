@@ -33,6 +33,7 @@ gem 'paperclip'
 gem 'has_scope'
 gem 'net-ssh'
 gem 'social-share-button', '~> 0.1.6'
+gem 'impressionist'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
