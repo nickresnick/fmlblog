@@ -23,7 +23,7 @@
            <tr>
             <b><td><%= link_to post.title, post %></b><i>  <%=post.topic.name %></i></td>
             <td><%= post.created_at.to_date %></td>
-             <td><%="Views:"%><%= post.impressionist_count %></td>
+             <td><%="Views: "%><%= post.impressionist_count %></td>
            </tr>
     <% end %>
     </tbody>
