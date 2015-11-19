@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where(:topic_id => search).order('created_at DESC')
+      where(:name => search).order('created_at DESC')
     else
       default_scoped
     end
