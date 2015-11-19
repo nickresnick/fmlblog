@@ -25,7 +25,7 @@ class Post < ActiveRecord::Base
     if search
       where(:posts => search).order('created_at DESC')
     else
-      default_scoped
+      where(:posts => [1,2,3]).order('created_at DESC')
     end
   end
 end
