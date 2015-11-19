@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit]
   after_filter "save_my_previous_url", only: [:new]
 
+  impressionist :actions=>[:show]
+
   # GET /posts
   # GET /posts.json
 
