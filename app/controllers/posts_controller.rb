@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @posts = Post.where(topic_id: :search)
+    @posts = Post.where(params[:topic_id])
   end
 
 
