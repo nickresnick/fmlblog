@@ -4,7 +4,7 @@
         <h3><%= link_to post.title, post %></h3>
     <p>by <%= link_to post.user.name, post.user %> on <%= post.created_at.strftime('%B %d, %Y')%></p>
         <p>
-          <%=  truncate(post.content, :length => 300, :escape => false).html_safe %>
+          <%=  truncate(post.content, :length => 300).html_safe %>
         </p>
         <h5><%= post.comments.count %> Comments</h5>
   </div>
