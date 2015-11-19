@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% form_for posts_path, :method => 'get' do %>
+<% form_for :search, : :method => 'get' do %>
     <p>
       <%= collection_select(:post, :topic_id, Topic.all, :id, :name, prompt: true)   %>
       <%= submit_tag "Search", :name => nil %>
