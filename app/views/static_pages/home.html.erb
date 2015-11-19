@@ -21,7 +21,7 @@
        <tbody>
         <% @posts.each do |post| %>
            <tr>
-            <td><%= link_to post.title, post %><i>  <%=post.topic.name %></i></td>
+            <strong><td><%= link_to post.title, post %></strong> <i>  <%=post.topic.name %></i></td>
             <td><%= post.created_at.strftime('%B %d, %Y') %></td>
            </tr>
     <% end %>
