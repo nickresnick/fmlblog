@@ -8,7 +8,7 @@
         <p>
           <%=  truncate(post.content, :length => 30, :escape => false).html_safe %>
         </p>
-        <h5><%= post.comments.count %> Comments</h5> <br>
+        <h5><%= post.comments.count %> Comments</h5>
         <h5><%= post.impressionist_count %> <% if post.impressionist_count == 1 %><%= "View" %><% else %> <%="Views"%><% end %></h5>
   </div>
   <div class="col-md-6">
