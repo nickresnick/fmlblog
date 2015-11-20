@@ -6,7 +6,7 @@
         <h3><%= link_to post.title, post %></h3>
     <p>by <%= link_to post.user.name, post.user %> on
       <%= post.created_at.strftime('%B %d, %Y')%> under
-      <%= post.topic.name %></p>
+      <%= link_to post.topic.name, post.topic %></p>
         <p>
           <%=  truncate(post.content, :length => 30, :escape => false).html_safe %>
         </p>
