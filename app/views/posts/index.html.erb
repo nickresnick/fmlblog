@@ -2,9 +2,9 @@
 
 <%= form_for posts_path, :method => 'get' do %>
     <p>
-      <%= collection_select(:search, :topic_id, Topic.all, :id, :name, prompt: "All Topics", :style=> 'width: 20px')   %>
-      <%= collection_select(:search, :user_id, User.all, :id, :name, prompt: "All Users",:style=> 'width: 20px')   %>
-      <%= submit_tag "Search", :name => nil, :style=> 'width: 20px' %>
+      <%= collection_select(:search, :topic_id, Topic.all, :id, :name, prompt: "All Topics", {:style => 'width: 20px'})   %>
+      <%= collection_select(:search, :user_id, User.all, :id, :name, prompt: "All Users", {:style => 'width: 20px'})   %>
+      <%= submit_tag "Search", :name => nil, :style => 'width: 100px' %>
     </p>
 <% end %>
 
