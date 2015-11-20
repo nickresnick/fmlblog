@@ -24,10 +24,10 @@ class Post < ActiveRecord::Base
   end
 
   def self.search(search)
-    if search
-      where(:posts => search).order('created_at DESC')
-    else
+    if search.blank?
       default_scoped
+    else
+      where(:posts => search).order('created_at DESC')
     end
   end
 end
