@@ -3,7 +3,7 @@
 <%= form_for posts_path, :method => 'get' do %>
     <p>
       <%= collection_select(:search, :topic_id, Topic.all, :id, :name, {prompt: "All Topics"}, {:class => 'my-custom-class'})   %>
-      <%= collection_select(:search, :user_id, User.all, :id, :name, {prompt: "All Users"}, {:class => 'my-custom-class'})   %>
+      <%= collection_select(:search, :user_id, User.all, :id, :name, {prompt: "All Users"}, {:class => 'my-custom-class'})   %><br>
       <%= submit_tag "Search", :name => nil, :style => 'width: 100px' %>
     </p>
 <% end %>
