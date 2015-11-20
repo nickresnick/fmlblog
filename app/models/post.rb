@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.search(search)
-    if search.blank? || search == ""
+    if search.blank? || search == " "
       default_scoped
     else
       where(:posts => search).order('created_at DESC')
