@@ -2,13 +2,14 @@
 
 <h1>Posts Archive</h1>
 
-<%= form_for posts_path, :method => 'get' do %>
+<div align="center"> <%= form_for posts_path, :method => 'get' do %>
     <p>
       <%= collection_select(:search, :topic_id, Topic.all, :id, :name, {prompt: "All Topics"}, {:class => 'my-custom-class'})%>
       <%= collection_select(:search, :user_id, User.all, :id, :name, {prompt: "All Users"}, {:class => 'my-custom-class'})%>
       <%= submit_tag "Search", :name => nil, :class => 'my-custom-class'%>
     </p>
 <% end %>
+  </div>
 <hr>
 
 <%= render 'shared/feed' %>
