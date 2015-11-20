@@ -383,4 +383,7 @@ span.picture {
     border-width: 1px;
   }
 
-.my-custom-class { width: 100px; }
+.my-custom-class {
+  width: 100px;
+  align-self: center;
+}
