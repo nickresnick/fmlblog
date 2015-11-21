@@ -20,8 +20,8 @@
 <%= render "comments/form" %>
 </div>
 
-<hr>
 <% if logged_in? %>
+    <hr>
     <h2><%= link_to "delete", @post, method: :delete,
                 data: { confirm: "You sure?" } %></h2>
 <% end %>
