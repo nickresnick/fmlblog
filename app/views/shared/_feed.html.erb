@@ -8,7 +8,7 @@
       <%= post.created_at.strftime('%B %d, %Y')%> under
       <%= link_to post.topic.name, post.topic %></p>
         <p>
-          <%=  truncate(post.content, :length => 30, :escape => false).html_safe %>
+          <%=  truncate(post.content, :length => 50, :escape => false).html_safe %>
         </p>
     <h5><%= post.comments.count %>
       <% if post.comments.count == 1 %>
