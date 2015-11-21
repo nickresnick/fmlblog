@@ -3,12 +3,12 @@
 <h1>
   <%= @topic.name %>
 </h1>
+<hr>
 
 <% if @topic.posts.any? %>
-<p>
-  <%= render 'shared/feed' %>
-</p>
+    <p>
+      <%= render 'shared/feed' %>
+    </p>
 <% end %>
-<p>
 
 <h4><%= link_to 'Back', url_for(:back) %></h4>

@@ -19,3 +19,8 @@
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
 </div>
+
+<% if logged_in? %>
+    <%= link_to "delete", @post, method: :delete,
+                data: { confirm: "You sure?" } %>
+<% end %>
