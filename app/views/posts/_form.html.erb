@@ -6,7 +6,7 @@
       <%= f.input :title %>
       <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
       <span class="picture">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %> <%# to validate both internally and on the browser %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :prompt => "Try to make pic demensions close to 2500x1600" %> <%# to validate both internally and on the browser %>
       </span>
     </div>
     <br>
