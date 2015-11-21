@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
         format.json { render json: @post.comments.errors, status: :unprocessable_entity }
       end
     end
-    redirect_to post_path(@post)
   end
 
   def destroy
