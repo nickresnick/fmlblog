@@ -35,11 +35,11 @@ textarea{
 /* typography */
  h1, h2, h3, h4, h5, h6 {
    line-height: 1;
+   font-family: 'Lato';
  }
 
  h1{
    font-size: 3em;
-   font-family: 'Lato';
    letter-spacing: -2px;
    margin-bottom: 30px;
    text-align: center;
@@ -47,26 +47,28 @@ textarea{
 
  h2{
    font-size: 1.7em;
-   font-family: 'Lato';
    text-align: center;
    font-weight: normal;
    color: dimgrey;
  }
 
  #h2-special {
-   margin-bottom: 30px;
    color: dimgrey;
+   margin-bottom: 30px;
  }
 
 h3{
   font-size: 2em;
-  font-family: 'Lato';
   letter-spacing: -1px;
   margin-bottom: 20px;
   text-align: left;
   font-weight: normal;
   color: black;
 
+}
+
+h4{
+  color: dimgray;
 }
 
  p {
