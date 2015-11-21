@@ -5,8 +5,10 @@
       <%= f.association :topic, :include_blank => false %>
       <%= f.input :title %>
       <%= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+      <br>
       <span class="picture">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :prompt => "Try to make pic demensions close to 2500x1600" %> <%# to validate both internally and on the browser %>
+        <p>Try to make pic dimensions close to 2500 x 1600</p>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %> <%# to validate both internally and on the browser %>
       </span>
     </div>
     <br>
