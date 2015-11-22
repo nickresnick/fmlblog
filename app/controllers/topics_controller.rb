@@ -20,8 +20,13 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = Topic.new
-    @topic.posts.build
+    if logged_in?
+      @topic = Topic.new
+      @topic.posts.build
+    else
+      redirect_to root_path
+      flash[:info] = "You're not authorized to make a topic"
+    end
   end
 
   # GET /topics/1/edit
