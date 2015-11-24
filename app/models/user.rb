@@ -98,8 +98,8 @@ class User < ActiveRecord::Base
     following_ids = "SELECT followed_id FROM relationships
                      WHERE  follower_id = :user_id" #Since following/follower is an index, we say look in relationships,
                                                     #find all followed_id's where the follower_id is equal to our user id.
-    Micropost.where("user_id IN (#{following_ids})
-                     OR user_id = :user_id", user_id: id) #since followed_id = user_id, we look for the user_id in following_ids
+    #Micropost.where("user_id IN (#{following_ids})
+    #                 OR user_id = :user_id", user_id: id) #since followed_id = user_id, we look for the user_id in following_ids
   end
 
   # Follows a user.

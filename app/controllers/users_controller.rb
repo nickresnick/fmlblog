@@ -85,15 +85,11 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
-  private #AAAAAAAAAAAAANNNNNNYYYTTTTHHHHHHHHIIIINNNNGGGGG Below here is PRIVATE
+  private #AAAAAAAAAAAAANNNNNNYYYTTTTHHHHHHHHIIIINNNNGGGGG Below here is PRIVATE -- Note that they put micropost_params in here, probs to have in user#show
 
     def user_params
     params.require(:user).permit(:name, :email, :password, #Note here that remember_digest and admin are left out so ppl can't edit them
                                  :password_confirmation)
-    end
-
-    def micropost_params
-      params.require(:micropost).permit(:content, :picture)
     end
 
     def admin_user #Defines admin user for before action

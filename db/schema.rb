@@ -64,17 +64,6 @@ ActiveRecord::Schema.define(version: 20151119220814) do
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
 
-  create_table "microposts", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "picture"
-  end
-
-  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
-  add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
-
   create_table "posts", force: :cascade do |t|
     t.string   "name"
     t.string   "title"
