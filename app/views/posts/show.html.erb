@@ -1,5 +1,4 @@
 <h4><%= link_to 'Back', url_for(:back) %></h4>
-
 <p id="notice"><%= notice %></p>
 <div class="row">
   <h1>
@@ -9,22 +8,29 @@
   <div clas="col-md-7">
     <section>
       <p>
-  <%= raw @post.content %>
-</p>
-  </section>
-</div>
+        <%= raw @post.content %>
+      </p>
+    </section>
+  </div>
   <div class="col-md-5">
     <div class="jumbotron jumbotron-special">
       <h2 id="h2-special">Most Recent Posts</h2>
       <table>
         <thead>
-        <td><h5>Post</h5></td>
-        <td><h5>Date Posted</h5></td>
+        <td>
+          <h5>Post</h5>
+        </td>
+        <td>
+          <h5>Date Posted</h5>
+        </td>
         </thead>
         <tbody>
         <% @recent_posts.each do |post| %>
             <tr>
-              <b><td><%= link_to post.title, post %></b></td>
+              <b>
+                <td><%= link_to post.title, post %>
+              </b>
+              </td>
               <td><%= post.created_at.to_date %></td>
               <td><%="Views: "%><%= post.impressionist_count %></td>
             </tr>
@@ -32,16 +38,15 @@
         </tbody>
       </table>
     </div>
-  <hr>
-<h2>Comments (<%= @post.comments.count %>)</h2>
-<%= render @post.comments %>
-
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
-</div>
-
-<% if logged_in? %>
     <hr>
-    <h2><%= link_to "delete", @post, method: :delete,
-                data: { confirm: "You sure?" } %></h2>
-<% end %>
+    <h2>Comments (<%= @post.comments.count %>)</h2>
+    <%= render @post.comments %>
+    <h2>Add a comment:</h2>
+    <%= render "comments/form" %>
+  </div>
+  <% if logged_in? %>
+      <hr>
+      <h2><%= link_to "delete", @post, method: :delete,
+                      data: { confirm: "You sure?" } %></h2>
+  <% end %>
+</div>

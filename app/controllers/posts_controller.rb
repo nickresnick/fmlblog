@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
   end
 
   def save_my_previous_url
