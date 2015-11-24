@@ -13,7 +13,25 @@
 </p>
   </section>
 </div>
-
+  <div class="col-md-5">
+    <div class="jumbotron jumbotron-special">
+      <h2 id="h2-special">Most Recent Posts</h2>
+      <table>
+        <thead>
+        <td><h5>Post</h5></td>
+        <td><h5>Date Posted</h5></td>
+        </thead>
+        <tbody>
+        <% @recent_posts.each do |post| %>
+            <tr>
+              <b><td><%= link_to post.title, post %></b></td>
+              <td><%= post.created_at.to_date %></td>
+              <td><%="Views: "%><%= post.impressionist_count %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   <hr>
 <h2>Comments (<%= @post.comments.count %>)</h2>
 <%= render @post.comments %>
