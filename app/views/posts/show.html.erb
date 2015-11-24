@@ -6,11 +6,13 @@
     <%= @post.title %>
   </h1>
   <hr>
-  <section>
-<p>
+  <div clas="col-md-7">
+    <section>
+      <p>
   <%= raw @post.content %>
 </p>
   </section>
+</div>
 
   <hr>
 <h2>Comments (<%= @post.comments.count %>)</h2>
