@@ -36,15 +36,15 @@
         </tbody>
       </table>
     </div>
-    <hr>
+  <hr>
     <h2>Comments (<%= @post.comments.count %>)</h2>
     <%= render @post.comments %>
     <h2>Add a comment:</h2>
     <%= render "comments/form" %>
-  </div>
   <% if logged_in? %>
       <hr>
       <h2><%= link_to "delete", @post, method: :delete,
                       data: { confirm: "You sure?" } %></h2>
   <% end %>
+  </div>
 </div>
