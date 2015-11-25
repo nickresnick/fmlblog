@@ -7,7 +7,7 @@
   <hr>
   <div class="col-md-7">
     <i>
-      By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.strftime('%B %d, %Y') %> <br>
+      By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.strftime('%B %d, %Y %H:%M') %> <br>
       <% if @post.created_at != @post.updated_at %>
           Updated on <%= @post.updated_at.strftime('%B %d, %Y') %>
       <% end %>
