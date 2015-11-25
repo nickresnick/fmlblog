@@ -18,7 +18,7 @@
        <tbody>
         <% @recent_posts.each do |post| %>
            <tr>
-            <td style="font-weight:bold;"><%= link_to post.title, post %></td>
+            <td><%= link_to post.title, post %></td>
             <td><%= post.created_at.to_date %></td>
              <td><%="Views: "%><%= post.impressionist_count %></td>
            </tr>
