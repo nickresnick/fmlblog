@@ -6,6 +6,12 @@
   </h1>
   <hr>
   <div class="col-md-7">
+    <i>
+      by <%= @post.user %> on <%= @post.created_at.strftime('%B %d, %Y') %> <br>
+      <% if @post.created_at != @post.updated_at %>
+          Updated on <%= @post.updated_at.strftime('%B %d, %Y') %>
+      <% end %>
+    </i>
       <p>
         <%= raw @post.content %>
       </p>
