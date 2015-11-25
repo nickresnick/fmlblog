@@ -9,7 +9,7 @@
     <i>
       By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.strftime('%B %d, %Y %I:%M %p') %> <br>
       <% if @post.created_at != @post.updated_at %>
-          Updated on <%= @post.updated_at.strftime('%B %d, %Y') %>
+          Updated on <%= @post.updated_at.strftime('%B %d, %Y %I:%M %p') %>
       <% end %>
     </i>
     <br>
