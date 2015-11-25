@@ -18,7 +18,7 @@
        <tbody>
         <% @recent_posts.each do |post| %>
            <tr>
-            <b><td><%= link_to post.title, post %></b></td>
+            <td><%= link_to post.title, post %></td>
             <td><%= post.created_at.to_date %></td>
              <td><%="Views: "%><%= post.impressionist_count %></td>
            </tr>
@@ -44,7 +44,7 @@
       </div>
       <div>
         <p style="font-weight:normal;">
-         <b>Nick's Take: </b><i>About Time</i> surprises everyone, including itself, by transcending typical coming-of-age/romance/familial movies.
+         Nick's Take: <i>About Time</i> surprises everyone, including itself, by transcending typical coming-of-age/romance/familial movies.
          This spectacularly genuine and touching film mixes humor, fantasy, and grief to communicate an old theme in a completely new light.
        </p>
       </div>
