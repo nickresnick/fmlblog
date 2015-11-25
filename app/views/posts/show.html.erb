@@ -48,9 +48,5 @@
     <%= render @post.comments %>
     <h2>Add a comment:</h2>
     <%= render "comments/form" %>
-  <% if logged_in? %>
-      <hr>
-      <h2><%= link_to "delete    ", @post, method: :delete, data: { confirm: "You sure?" }%> <%= link_to 'edit', edit_post_path(@post) %></h2>
-  <% end %>
   </div>
 </div>
