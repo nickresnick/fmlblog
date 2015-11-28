@@ -24,10 +24,10 @@
       <table>
         <thead>
         <td>
-          <h5>Post</h5>
+          <h5 style="font-weight: bold">Post</h5>
         </td>
         <td>
-          <h5>Date Posted</h5>
+          <h5 style="font-weight: bold">Date Posted</h5>
         </td>
         </thead>
         <tbody>
@@ -36,7 +36,6 @@
               <td><%= link_to post.title, post %>
               </td>
               <td><%= post.created_at.to_date %></td>
-              <td><%="Views: "%><%= post.impressionist_count %></td>
             </tr>
         <% end %>
         </tbody>
@@ -55,7 +54,6 @@
     </div>
   </div>
   <% if logged_in? %>
-      <hr>
       <h2><%= link_to "delete    ", @post, method: :delete, data: { confirm: "You sure?" }%> <%= link_to 'edit', edit_post_path(@post) %></h2>
   <% end %>
 </div>
