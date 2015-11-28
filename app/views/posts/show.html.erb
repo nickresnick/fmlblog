@@ -1,6 +1,6 @@
 <h4><%= link_to 'Back', url_for(:back) %></h4>
 <p id="notice"><%= notice %></p>
-< class="row">
+<div class="row">
 
   <h1>
     <%= @post.title %>
@@ -44,10 +44,12 @@
     </div>
   </div>
   <hr>
+  <div>
     <h2>Comments (<%= @post.comments.count %>)</h2>
     <%= render @post.comments %>
     <h2>Add a comment:</h2>
     <%= render "comments/form" %>
+  </div>
 
   <% if logged_in? %>
       <hr>
