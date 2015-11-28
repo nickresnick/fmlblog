@@ -9,24 +9,6 @@
   </div>
   <div class="col-md-5">
    <div class="jumbotron jumbotron-special">
-    <h2 id="h2-special">Most Recent Posts</h2>
-     <table>
-       <thead>
-       <td><h5 style="font-weight: bold;">Post</h5></td>
-       <td><h5 style="font-weight: bold;">Date Posted</h5></td>
-       </thead>
-       <tbody>
-        <% @recent_posts.each do |post| %>
-           <tr>
-            <td><%= link_to post.title, post %></td>
-            <td><%= post.created_at.to_date %></td>
-             <td><%="Views: "%><%= post.impressionist_count %></td>
-           </tr>
-    <% end %>
-    </tbody>
-     </table>
-    </div>
-    <hr>
     <div>
       <h2 id="h2-special"> Soundcloud Song of the Week</h2>
       <iframe width="100%" height="250" scrolling="no" frameborder="no"
@@ -49,8 +31,10 @@
        </p>
       </div>
     </div>
+   </div>
   </div>
 </div>
+
 <div>
   <h1><% if logged_in? %>
       <%= link_to 'New Post', new_post_path %>
