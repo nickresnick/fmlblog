@@ -1,12 +1,11 @@
 <h4><%= link_to 'Back', url_for(:back) %></h4>
 <p id="notice"><%= notice %></p>
-<div class="row">
+< class="row">
 
   <h1>
     <%= @post.title %>
   </h1>
   <hr>
-  <div class="vr">
   <div class="col-md-7">
     <i>
       By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %> <br>
@@ -18,7 +17,6 @@
       <p>
         <%= raw @post.content %>
       </p>
-  </div>
   </div>
   <div class="col-md-5">
     <div class="jumbotron jumbotron-special">
@@ -44,12 +42,13 @@
         </tbody>
       </table>
     </div>
+  </div>
   <hr>
     <h2>Comments (<%= @post.comments.count %>)</h2>
     <%= render @post.comments %>
     <h2>Add a comment:</h2>
     <%= render "comments/form" %>
-  </div>
+
   <% if logged_in? %>
       <hr>
       <h2><%= link_to "delete    ", @post, method: :delete, data: { confirm: "You sure?" }%> <%= link_to 'edit', edit_post_path(@post) %></h2>
