@@ -11,28 +11,32 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new' #login page
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
-
-  match '/posts/:id/:title' => 'posts#show', via: [:get, :post]
-  match '/topics/:id/:name' => 'topics#show', via: [:get, :post]
-  match '/users/:id/:name' => 'users#show', via: [:get, :post]
-
-
   get    'contacts' => 'contacts#new'
+  get '/posts/:id/:title' => 'posts#show'
+  get '/topics/:id/:name' => 'topics#show'
+  get '/users/:id/:name' => 'users#show'
 
   resources :users do
     member do
       get :following, :followers #member makes sure that the url is users/id/following so the id is included
     end
   end
-  resources :account_activations, only: [:edit]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :contacts,           only: [:new, :create]
+
   resources :posts do
     resources :comments
   end
+
   resources :topics do
     resources :posts
   end
+
+
+
+
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :contacts,           only: [:new, :create]
+
 
   mount Ckeditor::Engine => '/ckeditor'
 
