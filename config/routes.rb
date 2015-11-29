@@ -12,9 +12,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
   get    'contacts' => 'contacts#new'
-  get 'posts/:id/:title' => 'posts#show'
-  get 'topics/:id/:name' => 'topics#show'
-  get 'users/:id/:name' => 'users#show'
 
   resources :users do
     member do
@@ -22,11 +19,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, except: :show do
+  resources :posts do
     resources :comments
   end
 
-  resources :topics, except: :show
+  resources :topics
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
