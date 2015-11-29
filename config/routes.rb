@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create' #actual log in process
   delete 'logout'  => 'sessions#destroy'
 
+  match '/posts/:id/:title' => 'posts#show'
+  match '/topics/:id/:name' => 'topics#show'
+  match '/users/:id/:name' => 'users#show'
+
+
   get    'contacts' => 'contacts#new'
 
   resources :users do
