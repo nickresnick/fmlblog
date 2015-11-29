@@ -35,7 +35,7 @@
             <tr>
               <td><%= link_to post.title, post %>
               </td>
-              <td><%= post.created_at.to_date %></td>
+              <td><%= post.created_at.in_time_zone.strftime('%m/%d/%y') %></td>
             </tr>
         <% end %>
         </tbody>
