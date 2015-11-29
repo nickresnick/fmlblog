@@ -22,16 +22,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts do
+  resources :posts, except: :show do
     resources :comments
   end
 
-  resources :topics do
-    resources :posts
-  end
-
-
-
+  resources :topics, except: :show
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
