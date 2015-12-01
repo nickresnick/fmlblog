@@ -8,5 +8,9 @@
         <b>Comment:</b>
         <%= comment.body %>
     </p>
+
 </div>
+<% if logged_in? %>
+    <h2><%= link_to "delete", comment, method: :delete, data: {confirm: "You sure?" }%></h2>
+<% end %>
 <hr>
