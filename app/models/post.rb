@@ -36,7 +36,7 @@ class Post < ActiveRecord::Base
 
   def slug_candidates
     [
-        [:created_at, :title],
+        [:created_at, :title]
     ]
   end
 end
