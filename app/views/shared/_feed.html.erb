@@ -10,18 +10,8 @@
         <p>
           <%=  truncate(post.content, :length => 50, :escape => false).html_safe %>
         </p>
-    <h5><%= post.comments.count %>
-      <% if post.comments.count == 1 %>
-          <%= "Comment" %>
-      <% else %>
-          <%="Comments"%>
-      <% end %></h5>
-    <h5><%= post.impressionist_count %>
-          <% if post.impressionist_count == 1 %>
-              <%= "View" %>
-          <% else %>
-              <%="Views"%>
-          <% end %></h5>
+    <h5><%= pluralize(post.comments.count, 'Comment') %></h5>
+    <h5><%= pluralize(post.impressionist_count, 'View') %></h5>
   </div>
   <div class="col-md-6">
         <h2><%= image_tag post.picture.url, :height => "65%", :width => "65%" %></h2>
