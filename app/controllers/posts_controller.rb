@@ -17,7 +17,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.friendly.find(params[:id])
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
   end
 
