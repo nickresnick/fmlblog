@@ -10,14 +10,15 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @posts = Post.search(params[:search])
+    @posts = Post.friendly.search(params[:search])
   end
 
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
+    @post = Post.friendly.find(params[:id])
+    @recent_posts = Post.friendly.includes([:comments,:topic]).order("created_at desc").limit(10)
   end
 
   def save_my_previous_url
