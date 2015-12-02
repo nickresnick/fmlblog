@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   after_filter "save_my_previous_url", only: [:new]
 
-  impressionist :actions=>[:show]
-
   # GET /posts
   # GET /posts.json
 
@@ -17,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    impressionist(@post)
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
   end
 
