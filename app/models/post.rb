@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
 
   has_many :comments
   belongs_to :user
@@ -32,5 +32,11 @@ class Post < ActiveRecord::Base
     else
       where(:posts => search).order('created_at DESC')
     end
+  end
+
+  def slug_candidates
+    [
+        [:created_at, :title],
+    ]
   end
 end
