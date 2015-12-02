@@ -10,7 +10,7 @@
         <p>
           <%=  truncate(post.content, :length => 50, :escape => false).html_safe %>
         </p>
-    <h5><%= link_to pluralize(post.comments.count, 'Comment'), post_path(post, :anchor => "comments")%></h5>
+    <h5><%= link_to pluralize(post.comments.count, 'Comment'), post_path(post, :anchor => "comments") unless post.comments.count == 0 %></h5>
     <h5><%= pluralize(post.impressionist_count, 'View') %></h5>
   </div>
   <div class="col-md-6">
