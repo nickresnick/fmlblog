@@ -2,6 +2,7 @@
   <div class="container">
     <%= link_to "FML Blog", root_path, id: "logo" %>
     <nav>
+      <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-middle">
         <li><%= link_to "Film", Topic.find(1)%></li>
         <li><%= link_to "Music", Topic.find(2)%></li>
@@ -29,6 +30,7 @@
           <%#  <li><%= link_to "Log in", login_path %> </li>
         <% end %>
       </ul>
+      </div>
     </nav>
   </div>
 </header>
