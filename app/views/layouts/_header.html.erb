@@ -3,11 +3,9 @@
     <%= link_to "FML Blog", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <div>
         <li><%= link_to "Film", Topic.find(1)%></li>
         <li><%= link_to "Music", Topic.find(2)%></li>
         <li><%= link_to "Life", Topic.find(3)%></li>
-        </div>
         <li> <%= link_to "Help", help_path, id: "text"%> </li>
         <li><%= link_to "About", about_path, id: "text"%></li>
         <% if logged_in? %>
