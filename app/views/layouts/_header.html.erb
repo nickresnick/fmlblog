@@ -2,8 +2,13 @@
   <div class="container">
     <%= link_to "FML Blog", root_path, id: "logo" %>
     <nav>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-middle">
+      <ul class="nav navbar-nav">
         <li><%= link_to "Film", Topic.find(1)%></li>
         <li><%= link_to "Music", Topic.find(2)%></li>
         <li><%= link_to "Life", Topic.find(3)%></li>
