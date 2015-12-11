@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   before_action :admin_user, only: [:destroy]
   after_filter "save_my_previous_url", only: [:new]
 
+
+
   # GET /posts
   # GET /posts.json
 
@@ -18,6 +20,11 @@ class PostsController < ApplicationController
   def show
     impressionist(@post)
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
+    set_meta_tags :og => {
+                      :title    => @post.title,
+                      :image    => @post.picture,
+                      :description => truncate(@post.content, :length => 50, :escape => false).html_safe
+                  }
   end
 
   def save_my_previous_url
@@ -103,12 +110,5 @@ class PostsController < ApplicationController
       params.require(:post).permit(:name, :title, :content, :picture, :user_id, :topic_id)
     end
 
-    def metas
-      @metas = {
-          title: @post.title,
-          image: @post.picture,
-          description: truncate(@post.content, :length => 50, :escape => false).html_safe,
-          author: @post.user.name
-      }
-    end
+
 end

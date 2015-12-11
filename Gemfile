@@ -36,6 +36,7 @@ gem 'social-share-button', '~> 0.1.6'
 gem 'impressionist'
 gem 'friendly_id', '~> 5.1.0'
 gem 'newrelic_rpm'
+gem 'meta-tags'
 
 
 # Use ActiveModel has_secure_password
