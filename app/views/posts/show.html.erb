@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta property="og:title" content=<%= "#{@post.title}" %> />
   <meta property="og:image" content=<%="#{@post.picture}" %> />
-  <meta property="og:description" content=<%= truncate(@post.content, :length => 50, :escape => false).html_safe %> />
+  <meta property="og:description" content="<%= truncate(@post.content, :length => 50, :escape => false).html_safe %>" />
 </head>
 
 <h4><%= link_to 'Back', url_for(:back) %></h4>
