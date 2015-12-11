@@ -22,8 +22,7 @@ class PostsController < ApplicationController
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
     set_meta_tags :og => {
                       :title    => @post.title,
-                      :image    => @post.picture,
-                      :description => truncate(@post.content, :length => 50, :escape => false).html_safe
+                      :image    => @post.picture
                   }
   end
 
