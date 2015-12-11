@@ -1,8 +1,8 @@
 <head>
-  <meta name="title" content="<%= @post.title %>" >
-  <meta name="image" content= <%= @post.picture %> >
-  <meta name="keywords" content="blog, film, music, life, politics, pop-culture">
-  <meta name="description" content="Welcome to the Film, Music, & Life blog! Check out blog posts on a variety of topics with weekly song and movie recommendations.">
+  <meta charset="UTF-8">
+  <meta property="og:title" content="<%= @post.title %>">
+  <meta property="og:image" content="<%= link_to @post.picture %>">
+  <meta property="og:description" content="<%= truncate(@post.content, :length => 50, :escape => false).html_safe %>">
 </head>
 
 <h4><%= link_to 'Back', url_for(:back) %></h4>

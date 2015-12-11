@@ -102,4 +102,13 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:name, :title, :content, :picture, :user_id, :topic_id)
     end
+
+    def metas
+      @metas = {
+          title: @post.title,
+          image: @post.picture,
+          description: truncate(@post.content, :length => 50, :escape => false).html_safe,
+          author: @post.user.name
+      }
+    end
 end
