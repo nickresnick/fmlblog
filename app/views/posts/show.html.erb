@@ -1,4 +1,4 @@
-<% provide(:title, @post.title.to_s) %>
+<% provide(:title, @post.title.to_s.html_safe) %>
 
 <h4><%= link_to 'Back', url_for(:back) %></h4>
 <p id="notice"><%= notice %></p>
