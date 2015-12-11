@@ -40,4 +40,9 @@ class Post < ActiveRecord::Base
         [:created_at, :title]
     ]
   end
+
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
+
 end
