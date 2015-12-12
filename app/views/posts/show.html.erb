@@ -1,6 +1,6 @@
 <% provide(:title, @post.title.to_s.html_safe) %>
 <head>
-  <meta property="og:title" content="Hi"/>
+  <%= display_meta_tags %>
 </head>
 
 <h4><%= link_to 'Back', url_for(:back) %></h4>
