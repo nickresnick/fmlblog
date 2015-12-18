@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @post = Post.friendly.find(params[:post_id])
     @comment = @post.comments.create(comment_params)
     if @comment.save
-      @comment.comment_submission
+      @comment.send_comment_submission
       redirect_to @post
     else
       flash.now[:danger] = "error"
