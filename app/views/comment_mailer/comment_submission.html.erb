@@ -1,6 +1,21 @@
+<div class="row">
 <h1>Film, Music, and Life Blog</h1>
 
 <p>Hey <%= @comment.post.user.name %>,</p>
 
-<p>
-You received a comment! Check it out </p>
+<p>You received a comment! Check it out:</p>
+  <p>
+    <h3>
+      <%= @comment.post.title %>
+    </h3>
+  </p>
+  <p>
+    <b>Name:</b>
+    <%= @comment.commenter %>
+  </p>
+
+  <p>
+    <b>Comment:</b>
+    <%= @comment.body %>
+  </p>
+</div>
