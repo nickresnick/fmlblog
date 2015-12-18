@@ -4,6 +4,6 @@ class Comment < ActiveRecord::Base
   belongs_to :post
 
   def send_comment_submission
-    CommentMailer.comment_submission(self.post.user).deliver_now
+    CommentMailer.comment_submission(self).deliver_now
   end
 end
