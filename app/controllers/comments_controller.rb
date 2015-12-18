@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     if @comment.save
       @comment.send_comment_submission
-      redirect_to @post
+      format.html {redirect_to @post, notice: 'Comment was successfully posted.' }
     else
       flash.now[:danger] = "error"
     end
