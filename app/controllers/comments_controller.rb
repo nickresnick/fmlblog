@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
   def create
     @post = Post.friendly.find(params[:post_id])
     @post.comments.create(params[:comment].permit(:commenter, :body))
-    @post.comments.comment_submission
+    @comment = @post.comments.find(params[:id])
+    @comment.comment_submission
     redirect_to post_path(@post)
   end
 
