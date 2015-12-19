@@ -5,10 +5,10 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     if @comment.save
       @comment.send_comment_submission
-      flash.now[:success] = "Comment posted"
+      flash[:success] = "Comment posted"
       redirect_to @post
     else
-      flash.now[:danger] = "error"
+      flash[:danger] = "error"
     end
   end
 
