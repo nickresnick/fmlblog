@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include ActionView::Helpers::TextHelper
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:create, :destroy, :edit]
   before_action :correct_user, only: [:destroy]
@@ -26,7 +28,7 @@ class PostsController < ApplicationController
                   }
     set_meta_tags :title => @post.title,
         :image => @post.picture,
-        :description => truncate(@post.content, :length => 160)
+        :description => truncate(@post.content, :length => 160, :escape => false).html_safe
   end
 
   def save_my_previous_url
