@@ -24,6 +24,9 @@ class PostsController < ApplicationController
                       :title    => @post.title,
                       :image    => @post.picture
                   }
+    set_meta_tags :title => @post.title,
+        :image => @post.picture,
+        :description => truncate(@post.content, :length => 160)
   end
 
   def save_my_previous_url
