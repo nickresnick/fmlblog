@@ -9,8 +9,8 @@
           <span class="icon-bar"></span>
         </button>
       </div>
-      <ul class="nav navbar-nav navbar-right">
-        <div class="collapse navbar-collapse" id="myNavbar">
+      <div class="collapse navbar-collapse myNavbar">
+        <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Film", Topic.find(1), id: "text"%></li>
         <li><%= link_to "Music", Topic.find(2), id: "text"%></li>
         <li><%= link_to "Life", Topic.find(3), id: "text"%></li>
@@ -34,8 +34,8 @@
         <% else %>
           <%#  <li><%= link_to "Log in", login_path %> </li>
         <% end %>
-        </div>
       </ul>
+      </div>
     </nav>
   </div>
 </header>
