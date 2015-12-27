@@ -49,9 +49,8 @@ and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
   .p{
-    width: 100%;
-  }
-
+      font-size: 1.2em;
+    }
 }
 
 /* Landscape */
