@@ -10,7 +10,7 @@
         <%= @post.title %>
       </h1>
   <hr>
-  <div class="col-md-7">
+  <div id="wrapper" class="col-md-7">
     <i>
       By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %> <br>
       <% if @post.created_at != @post.updated_at %>
