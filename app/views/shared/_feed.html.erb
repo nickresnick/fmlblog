@@ -5,9 +5,7 @@
     <p>by <%= link_to post.user.name, post.user %> on
       <%= post.created_at.in_time_zone.strftime('%m/%d/%y')%> under
       <%= link_to post.topic.name, post.topic %></p>
-        <p>
-          <%=  truncate(post.content, :length => 50, :escape => false).html_safe %>
-        </p>
+      <%=  truncate(post.content, :length => 50, :escape => false).html_safe %>
     <h5><%= link_to pluralize(post.comments.count, 'Comment'), post_path(post, :anchor => "comments") unless post.comments.count == 0 %></h5>
     <h5><%= pluralize(post.impressionist_count, 'View') %></h5>
   </div>
