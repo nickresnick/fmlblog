@@ -9,7 +9,7 @@
   box-sizing:         border-box;
 }
 
-@media {
+@media only screen and (max-width: 500px){
   .container {
     padding:0;
     margin:0;
@@ -18,6 +18,8 @@
   body {
     padding:0;
   }
+
+  -webkit-text-size-adjust: 100%;
 
   .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
     margin-left: 0;
