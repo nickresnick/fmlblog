@@ -1,5 +1,6 @@
 <% provide(:title, @post.title.to_s.html_safe) %>
 <head>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <%= display_meta_tags %>
 </head>
 
@@ -10,7 +11,7 @@
         <%= @post.title %>
       </h1>
   <hr>
-  <div class="col-md-7">
+  <div id='nick' class="col-md-7">
     <i>
       By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %> <br>
       <% if @post.created_at != @post.updated_at %>
