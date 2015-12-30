@@ -1,6 +1,6 @@
 <% @posts.each do |post| %>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-xs-6">
         <h3><%= link_to post.title, post %></h3>
     <p>by <%= link_to post.user.name, post.user %> on
       <%= post.created_at.in_time_zone.strftime('%m/%d/%y')%> under
@@ -9,7 +9,7 @@
     <h5><%= link_to pluralize(post.comments.count, 'Comment'), post_path(post, :anchor => "comments") unless post.comments.count == 0 %></h5>
     <h5><%= pluralize(post.impressionist_count, 'View') %></h5>
   </div>
-  <div id="wrapper" class="col-md-6">
+  <div class="col-xs-6">
         <h2><%= image_tag post.picture.url, :width => "100%" %></h2>
   </div>
 </div>
