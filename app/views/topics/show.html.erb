@@ -2,6 +2,7 @@
 <head>
   <%= display_meta_tags %>
 </head>
+<div class="container">
 <h1>
   <%= @topic.name.capitalize %> Posts
 </h1>
@@ -14,3 +15,4 @@
 <% end %>
 
 <h4><%= link_to 'Back', url_for(:back) %></h4>
+</div>
