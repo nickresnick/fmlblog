@@ -9,6 +9,8 @@
 <hr>
 
 <% if @topic.posts.any? %>
+    <h3>Posts (<%= @user.posts.count %>)</h3>
+    <hr>
     <p>
       <%= render 'shared/feed' %>
     </p>
