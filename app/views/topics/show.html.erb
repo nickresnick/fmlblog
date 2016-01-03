@@ -1,13 +1,10 @@
 <% provide(:title, @topic.name.capitalize) %>
-
 <head>
   <%= display_meta_tags %>
 </head>
 <h1>
   <%= @topic.name.capitalize %> Posts
 </h1>
-<hr>
-
 <% if @topic.posts.any? %>
     <h3>Posts (<%= @topic.posts.count %>)</h3>
     <hr>
