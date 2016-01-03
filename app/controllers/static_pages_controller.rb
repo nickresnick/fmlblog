@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
+    @posts = Post.paginate(:page => params[:page], :per_page => 30).order("created_at desc")
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
 end
 
