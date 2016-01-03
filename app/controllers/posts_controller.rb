@@ -33,7 +33,7 @@ class PostsController < ApplicationController
                       :image    => @post.picture
                   }
     set_meta_tags :image => @post.picture,
-        :description => truncate(@post.content, :length => 160, :escape => false).html_safe
+        :description => @post.caption
   end
 
   def save_my_previous_url
