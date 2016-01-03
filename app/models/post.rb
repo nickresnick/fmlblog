@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
 
   validates :user_id, presence: true
   validates :title, presence: true
+  validates :caption, presence: true
   validates :content, length: {minimum: 5}
   validate :picture_size
 
