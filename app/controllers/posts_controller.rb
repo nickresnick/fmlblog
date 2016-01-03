@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 10).search(params[:search])
+    @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
   end
 
 
