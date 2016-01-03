@@ -2,67 +2,66 @@
 <head>
   <meta name="viewport" content="width=100%; initial-scale=1.0">
 </head>
-
 <div class="container">
-<h4><%= link_to 'Back', url_for(:back) %></h4>
-<p id="notice"><%= notice %></p>
-<div class="row wrapper">
-      <h1>
-        <%= raw @post.title %>
-      </h1>
-  <hr>
-  <div class="col-md-7">
-    <i>
-      By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %> <br>
-      <% if @post.created_at != @post.updated_at %>
-          Updated on <%= @post.updated_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %>
-      <% end %>
-    </i>
-    <br>
-    <br>
-        <%= raw @post.content %>
-  </div >
-  <div class="col-md-5">
-    <div>
-      <h1>
-      <%= image_tag @post.picture.url, :width => "100%" %>
-      </h1>
-    </div>
-    <div class="jumbotron jumbotron-special">
-      <h2 id="h2-special">Most Recent Posts</h2>
-      <table>
-        <thead>
-        <td>
-          <h5 style="font-weight: bold">Post</h5>
-        </td>
-        <td>
-          <h5 style="font-weight: bold">Date Posted</h5>
-        </td>
-        </thead>
-        <tbody>
-        <% @recent_posts.each do |post| %>
-            <tr>
-              <td style="line-height: normal"><%= link_to post.title.html_safe, post %></td>
-              <td><%= post.created_at.in_time_zone.strftime('%m/%d/%y') %></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div id="comments" class="col-md-12">
+  <h4><%= link_to 'Back', url_for(:back) %></h4>
+  <p id="notice"><%= notice %></p>
+  <div class="row wrapper">
+    <h1>
+      <%= raw @post.title %>
+    </h1>
     <hr>
-    <div class="row">
-      <div class="col-md-7">
-    <h2>Comments (<%= @post.comments.count %>)</h2>
-    <%= render @post.comments %>
-    <h2>Add a comment:</h2>
-    <%= render "comments/form" %>
+    <div class="col-md-7">
+      <i>
+        By <%= link_to @post.user.name, @post.user %> on <%= @post.created_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %> <br>
+        <% if @post.created_at != @post.updated_at %>
+            Updated on <%= @post.updated_at.in_time_zone.strftime('%B %d, %Y %I:%M %p') %>
+        <% end %>
+      </i>
+      <br>
+      <br>
+      <%= raw @post.content %>
+    </div >
+    <div class="col-md-5">
+      <div>
+        <h1>
+          <%= image_tag @post.picture.url, :width => "100%" %>
+        </h1>
+      </div>
+      <div class="jumbotron jumbotron-special">
+        <h2 id="h2-special">Most Recent Posts</h2>
+        <table>
+          <thead>
+          <td>
+            <h5 style="font-weight: bold">Post</h5>
+          </td>
+          <td>
+            <h5 style="font-weight: bold">Date Posted</h5>
+          </td>
+          </thead>
+          <tbody>
+          <% @recent_posts.each do |post| %>
+              <tr>
+                <td style="line-height: normal"><%= link_to post.title.html_safe, post %></td>
+                <td><%= post.created_at.in_time_zone.strftime('%m/%d/%y') %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
+    <div id="comments" class="col-md-12">
+      <hr>
+      <div class="row">
+        <div class="col-md-7">
+          <h2>Comments (<%= @post.comments.count %>)</h2>
+          <%= render @post.comments %>
+          <h2>Add a comment:</h2>
+          <%= render "comments/form" %>
+        </div>
+      </div>
+    </div>
+    <% if logged_in? %>
+        <h2><%= link_to "delete    ", @post, method: :delete, data: { confirm: "You sure?" }%> <%= link_to 'edit', edit_post_path(@post) %></h2>
+    <% end %>
   </div>
-  <% if logged_in? %>
-      <h2><%= link_to "delete    ", @post, method: :delete, data: { confirm: "You sure?" }%> <%= link_to 'edit', edit_post_path(@post) %></h2>
-  <% end %>
-</div>
 </div>
