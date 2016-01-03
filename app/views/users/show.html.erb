@@ -1,6 +1,9 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, "Posts by #{@user.name}") %>
+<head>
+  <%= display_meta_tags %>
+</head>
 <div class="row">
-      <h1><%= @user.name %></h1>
+      <h1>Posts by <%= @user.name %></h1>
   <div class="col-md-12">
     <% if @user.posts.any? %>
         <h3>Posts (<%= @user.posts.count %>)</h3>
@@ -8,7 +11,6 @@
         <ol class="posts">
           <%= render 'shared/feed' %>
         </ol>
-       <%# <%= will_paginate @posts %>
     <% end %>
   </div>
   <h4><%= link_to 'Back', url_for(:back) %></h4>
