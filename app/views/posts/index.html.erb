@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>Posts Archive</h1>
-
 <div align="center"> <%= form_for posts_path, :method => 'get' do %>
     <p>
       <%= collection_select(:search, :topic_id, Topic.all, :id, :name, {prompt: "All Topics"}, {:class => 'my-custom-class'})%>
@@ -10,5 +9,5 @@
 <% end %>
   </div>
 <hr>
-
 <%= render 'shared/feed' %>
+</div>
