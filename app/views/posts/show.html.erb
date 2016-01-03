@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=100%; initial-scale=1.0">
 </head>
 
+<div class="container">
 <h4><%= link_to 'Back', url_for(:back) %></h4>
 <p id="notice"><%= notice %></p>
 <div class="row wrapper">
@@ -63,4 +64,5 @@
   <% if logged_in? %>
       <h2><%= link_to "delete    ", @post, method: :delete, data: { confirm: "You sure?" }%> <%= link_to 'edit', edit_post_path(@post) %></h2>
   <% end %>
+</div>
 </div>
