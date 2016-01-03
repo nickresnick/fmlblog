@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
-    @posts = @user.posts.order("created_at desc")
+    @posts = @user.posts.paginate(:page => params[:page], :per_page => 10).order("created_at desc")
   end
 
   def index #remember that when this, and edit and new are called upon by a route, it automatically goes to the view with the same name as well

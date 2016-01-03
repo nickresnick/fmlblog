@@ -15,7 +15,7 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
     @topic = Topic.friendly.find(params[:id])
-    @posts = @topic.posts.order("created_at desc")
+    @posts = @topic.posts.paginate(:page => params[:page], :per_page => 10).order("created_at desc")
   end
 
   # GET /topics/new
