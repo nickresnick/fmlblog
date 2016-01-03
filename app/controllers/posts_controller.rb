@@ -22,12 +22,17 @@ class PostsController < ApplicationController
   def show
     impressionist(@post)
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
+
     set_meta_tags :og => {
                       :title    => @post.title,
                       :image    => @post.picture
                   }
-    set_meta_tags :title => @post.title,
-        :image => @post.picture,
+
+    set_meta_tags :twitter => {
+                      :title    => @post.title,
+                      :image    => @post.picture
+                  }
+    set_meta_tags :image => @post.picture,
         :description => truncate(@post.content, :length => 160, :escape => false).html_safe
   end
 
