@@ -5,7 +5,7 @@ class StaticPagesController < ApplicationController
     @recent_posts = Post.includes([:comments,:topic]).order("created_at desc").limit(10)
 
     set_meta_tags :og => {
-                      :image    => '/kanye.jpg'
+                      :image    => 'https://palola.s3.amazonaws.com/uploads/post/picture/21/2015-02-09-oKANYEWESTfacebook.jpg'
                   }
 end
 
