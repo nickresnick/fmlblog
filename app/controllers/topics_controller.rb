@@ -18,12 +18,12 @@ class TopicsController < ApplicationController
     @posts = @topic.posts.paginate(:page => params[:page], :per_page => 10).order("created_at desc")
 
     set_meta_tags :og => {
-                      :title    => @topic.title,
+                      :title    => @topic.name,
                       :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
                   }
 
     set_meta_tags :twitter => {
-                      :title    => @topic.title,
+                      :title    => @topic.name,
                   }
     set_meta_tags :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
   end
