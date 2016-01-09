@@ -16,6 +16,17 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.friendly.find(params[:id])
     @posts = @topic.posts.paginate(:page => params[:page], :per_page => 10).order("created_at desc")
+
+    set_meta_tags :og => {
+                      :title    => @topic.title,
+                      :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
+                  }
+
+    set_meta_tags :twitter => {
+                      :title    => @topic.title,
+                  }
+    set_meta_tags :image => @topic.picture,
+                  :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
   end
 
   # GET /topics/new
