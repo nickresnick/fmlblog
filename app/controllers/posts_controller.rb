@@ -28,10 +28,6 @@ class PostsController < ApplicationController
                       :image    => @post.picture
                   }
 
-    set_meta_tags :twitter => {
-                      :title    => @post.title,
-                      :image    => @post.picture
-                  }
     set_meta_tags :image => @post.picture,
         :description => @post.caption
   end

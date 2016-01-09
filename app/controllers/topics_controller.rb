@@ -22,9 +22,6 @@ class TopicsController < ApplicationController
                       :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
                   }
 
-    set_meta_tags :twitter => {
-                      :title    => @topic.name,
-                  }
     set_meta_tags :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
   end
 
