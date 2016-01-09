@@ -25,8 +25,7 @@ class TopicsController < ApplicationController
     set_meta_tags :twitter => {
                       :title    => @topic.title,
                   }
-    set_meta_tags :image => @topic.picture,
-                  :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
+    set_meta_tags :description => "Film reviews, interviews, and essays for moviegoers of all shapes and sizes."
   end
 
   # GET /topics/new
