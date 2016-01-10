@@ -23,6 +23,14 @@ User.create!(name:  "Spencer",
              activated: true,
              activated_at: Time.zone.now)
 
+User.create!(name:  "Jake",
+             email: "jmbadalamenti@gmail.com",
+             password:              "Jakemb1994",
+             password_confirmation: "Jakemb1994",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
+
 Topic.create!(name:  "film")
 Topic.create!(name:  "music")
 Topic.create!(name:  "life")
