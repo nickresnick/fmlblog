@@ -58,7 +58,7 @@
       </div>
     </div>
     <% if logged_in? %>
-        <h2><%= link_to 'delete', post, method: :delete, data: {confirm: "You sure?" }%>
+        <h2><%= button_to 'delete', @post, method: :delete, data: {confirm: "You sure?" }%>
           <%= link_to 'edit', edit_post_path(@post) %></h2>
     <% end %>
   </div>
