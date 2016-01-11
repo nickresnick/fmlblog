@@ -18,6 +18,12 @@
 @media only screen and (max-width: 480px) {
     .wrapper {
       width: 400px;
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 90%;
+      }
     }
 
     div#header {
