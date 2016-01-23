@@ -7,7 +7,7 @@ User.create!(name:  "Nick",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!(name:  "Sam",
+User.delete!(name:  "Sam",
              email: "samcorey@umich.edu",
              password:              "baebabae",
              password_confirmation: "baebabae",
@@ -15,7 +15,7 @@ User.create!(name:  "Sam",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!(name:  "Spencer",
+User.delete!(name:  "Spencer",
              email: "swgood@umich.edu",
              password:              "astro1994",
              password_confirmation: "astro1994",
@@ -27,6 +27,14 @@ User.create!(name:  "Jake",
              email: "jmbadalamenti@gmail.com",
              password:              "Jakemb1994",
              password_confirmation: "Jakemb1994",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
+
+User.create!(name:  "Josh",
+             email: "joshster@umich.edu",
+             password:              "sternum23",
+             password_confirmation: "sternum23",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
