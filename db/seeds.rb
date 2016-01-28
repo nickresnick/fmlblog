@@ -31,10 +31,10 @@ User.create!(name:  "Jake",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!(name:  "Josh",
-             email: "joshster@umich.edu",
-             password:              "sternum23",
-             password_confirmation: "sternum23",
+User.create!(name:  "Jasper",
+             email: "jmapollo@syr.edu",
+             password:              "B*12fr*j",
+             password_confirmation: "B*12fr*j",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
