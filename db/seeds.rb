@@ -39,6 +39,14 @@ User.create!(name:  "Jasper",
              activated: true,
              activated_at: Time.zone.now)
 
+User.create!(name:  "Josh",
+             email: "joshster@umich.edu",
+             password:              "sternum23",
+             password_confirmation: "sternum23",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
+
 Topic.create!(name:  "film")
 Topic.create!(name:  "music")
 Topic.create!(name:  "life")
